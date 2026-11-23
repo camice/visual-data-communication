@@ -1,0 +1,317 @@
+---
+number-sections: false
+---
+
+# Recipes {.unnumbered}
+
+Short, copyable code for the changes you will make most often. Each recipe assumes you already have a plot stored as `p`, or a data frame `df` with a categorical column `group` and a numeric column `value`. Replace the names with your own.
+
+In Python, these recipes assume `import pandas as pd` and `from plotnine import *`.
+
+## Sort bars by value
+
+Turn alphabetical order into a ranking.
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+ggplot(df, aes(x = value, y = fct_reorder(group, value))) +
+  geom_col()
+```
+
+## Python
+
+```python
+order = df.sort_values("value")["group"]
+df["group"] = pd.Categorical(df["group"], categories=order)
+
+(ggplot(df, aes(x="group", y="value"))
+ + geom_col()
+ + coord_flip())
+```
+:::
+
+## Grey everything, highlight one group
+
+Create a true or false column for the group your message is about.
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+df |>
+  mutate(focus = group == "Mine") |>
+  ggplot(aes(x = value, y = fct_reorder(group, value), fill = focus)) +
+  geom_col() +
+  scale_fill_manual(values = c("grey75", "#D6083B"), guide = "none")
+```
+
+## Python
+
+```python
+df["focus"] = df["group"] == "Mine"
+
+(ggplot(df, aes(x="group", y="value", fill="focus"))
+ + geom_col()
+ + coord_flip()
+ + scale_fill_manual(values=["#BFBFBF", "#D6083B"], guide=None))
+```
+:::
+
+## Headline, subtitle, caption and axis labels
+
+
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+p + labs(title = "What the reader should notice",
+         subtitle = "What is measured, where and when",
+         caption = "Source: ...",
+         x = "Readable label (units)", y = NULL)
+```
+
+## Python
+
+```python
+p + labs(title="What the reader should notice",
+         subtitle="What is measured, where and when",
+         caption="Source: ...",
+         x="Readable label (units)", y="")
+```
+:::
+
+## Label line ends instead of a legend
+
+Make a table of the last point of each line, and draw the labels there.
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+ends <- df |> filter(year == max(year))
+
+ggplot(df, aes(x = year, y = value, colour = group)) +
+  geom_line() +
+  geom_text(data = ends, aes(label = group), hjust = 0, nudge_x = 1) +
+  scale_x_continuous(expand = expansion(mult = c(0.02, 0.25))) +
+  theme(legend.position = "none")
+```
+
+## Python
+
+```python
+ends = df[df["year"] == df["year"].max()]
+
+(ggplot(df, aes(x="year", y="value", color="group"))
+ + geom_line()
+ + geom_text(ends, aes(label="group"), ha="left", nudge_x=1)
+ + theme(legend_position="none"))
+```
+:::
+
+## Remove the legend
+
+
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+p + theme(legend.position = "none")
+```
+
+## Python
+
+```python
+p + theme(legend_position="none")
+```
+:::
+
+## Colour-blind safe colours
+
+The Okabe and Ito palette. Use a named vector or dictionary to fix colours to groups.
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+cols <- c(A = "#E69F00", B = "#56B4E9", C = "#009E73", D = "#0072B2")
+p + scale_colour_manual(values = cols)
+```
+
+## Python
+
+```python
+cols = {"A": "#E69F00", "B": "#56B4E9", "C": "#009E73", "D": "#0072B2"}
+p + scale_color_manual(values=cols)
+```
+:::
+
+## Viridis for continuous colour
+
+
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+p + scale_colour_viridis_c()     # or scale_fill_viridis_c()
+```
+
+## Python
+
+```python
+p + scale_color_cmap("viridis")  # or scale_fill_cmap("viridis")
+```
+:::
+
+## Diverging colours around zero
+
+
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+p + scale_fill_gradient2(low = "#0072B2", mid = "white", high = "#D55E00",
+                         midpoint = 0)
+```
+
+## Python
+
+```python
+p + scale_fill_gradient2(low="#0072B2", mid="white", high="#D55E00",
+                         midpoint=0)
+```
+:::
+
+## Readable tick labels
+
+
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+p + scale_y_continuous(labels = scales::label_percent())
+p + scale_x_continuous(labels = scales::label_comma())
+p + scale_x_log10(labels = scales::label_dollar(accuracy = 1))
+```
+
+## Python
+
+```python
+p + scale_y_continuous(labels=lambda b: [f"{v:.0%}" for v in b])
+p + scale_x_continuous(labels=lambda b: [f"{v:,.0f}" for v in b])
+p + scale_x_log10(labels=lambda b: [f"${v:,.0f}" for v in b])
+```
+:::
+
+## Zoom without removing data
+
+
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+p + coord_cartesian(ylim = c(40, 90))
+```
+
+## Python
+
+```python
+p + coord_cartesian(ylim=(40, 90))
+```
+:::
+
+## Small multiples with context
+
+Draw all the data in grey behind every panel, then each group on top.
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+ggplot(df, aes(x = x, y = y)) +
+  geom_point(data = select(df, -group), colour = "grey85") +
+  geom_point(colour = "#0072CF") +
+  facet_wrap(~ group)
+```
+
+## Python
+
+```python
+background = df.drop(columns="group")
+
+(ggplot(df, aes(x="x", y="y"))
+ + geom_point(data=background, color="#D9D9D9")
+ + geom_point(color="#0072CF")
+ + facet_wrap("group"))
+```
+:::
+
+## Clean theme with larger text
+
+
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+p + theme_minimal(base_size = 14) +
+  theme(panel.grid.minor = element_blank())
+```
+
+## Python
+
+```python
+p + theme_minimal(base_size=14) + theme(panel_grid_minor=element_blank())
+```
+:::
+
+## Combine plots with panel letters
+
+
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+library(patchwork)
+(p1 | p2) / p3 + plot_annotation(tag_levels = "A")
+```
+
+## Python
+
+```python
+p1 = p1 + labs(tag="A")
+p2 = p2 + labs(tag="B")
+p3 = p3 + labs(tag="C")
+(p1 | p2) / p3
+```
+:::
+
+## Save at the final size
+
+8.5 cm is about one journal column; 17 cm is a full page width.
+
+::: {.panel-tabset group="language"}
+## R
+
+```r
+ggsave("figures/figure1.pdf", p, width = 8.5, height = 6, units = "cm")
+ggsave("figures/figure1.png", p, width = 8.5, height = 6, units = "cm", dpi = 600)
+```
+
+## Python
+
+```python
+p.save("figures/figure1.pdf", width=8.5, height=6, units="cm")
+p.save("figures/figure1.png", width=8.5, height=6, units="cm", dpi=600)
+```
+:::
+

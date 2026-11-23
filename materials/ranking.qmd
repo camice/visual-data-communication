@@ -1,308 +1,335 @@
 ---
-title: "Rank and order"
+title: "Ranking and ordering"
 ---
 
+::: {.callout-tip}
+#### Learning objectives
+
+- Make bar charts of counts and of values.
+- Sort categories so the order carries meaning.
+- Use horizontal bars, dot plots and lollipops for long category names.
+- Show parts of a whole without a pie chart.
+:::
+
+::: {.before-after}
+<div><span class="chip before">Alphabetical</span>
+
+![](images/makeover_1.png)
+
+Default order, raw labels, colour that adds nothing.</div>
+<div><span class="chip after">Ranked</span>
+
+![](images/makeover_2.png)
+
+Sorted, horizontal and readable. The order is now part of the message.</div>
+:::
+
+## Load packages and data
+
+::: {.panel-tabset group="language"}
+## R
+
 ```{r}
-#| echo: false
-#| message: false
-#| results: hide
-source(file = "setup-files/setup.R")
+library(tidyverse)
+
+gapminder <- read_csv("data/gapminder_2010.csv")
+penguins <- read_csv("data/penguins.csv")
 ```
+
+## Python
 
 ```{python}
-#| echo: false
-#| message: false
-import shutup;shutup.please()
-exec(open('setup-files/setup.py').read())
+import pandas as pd
+from plotnine import *
+
+gapminder = pd.read_csv("data/gapminder_2010.csv")
+penguins = pd.read_csv("data/penguins.csv")
 ```
-
-::: callout-tip
-## Learning outcomes
-
-- Consider informational hierarchy
-- Be able to rank and order data
-- Understand how to use ordering in visualisations
 :::
 
-## Libraries and functions
+## Counts and values <span class="badge-core">Core</span>
 
-::: {.callout-note collapse="true"}
-## Click to expand
+There are two kinds of bar chart:
 
-::: {.panel-tabset group="language"}
-## R
-
-### Libraries
-### Functions
-
-:::
-:::
-
-## Purpose and aim
-
-Hierarchy in data can often be translated to hierarchy of our graph. It allows us to change the narrative of our visualisation and give it structure. This often involves us ordering or ranking our data. We'll practice some examples of that here.
-
-## Loading data
-
-If you haven't done so yet, please load the data as follows:
+- `geom_bar()` **counts rows** for you. Use it when each row is one observation.
+- `geom_col()` **draws a value you already have**. Use it when you have calculated a number per category.
 
 ::: {.panel-tabset group="language"}
 ## R
 
 ```{r}
-#| message: false
-gapminder <- read_csv("data/gapminder_clean.csv")
+#| fig-height: 3.5
+ggplot(penguins, aes(x = island)) +
+  geom_bar() +
+  labs(x = NULL, y = "Number of penguins")
 ```
 
+## Python
+
+```{python}
+p = (ggplot(penguins, aes(x="island"))
+     + geom_bar()
+     + labs(x="", y="Number of penguins")
+     + theme(figure_size=(7, 3.5)))
+p.show()
+```
 :::
 
-Using the `gapminder` data set, let's look at the following example.
+Now some values per category: mean life expectancy in each region.
 
 ::: {.panel-tabset group="language"}
 ## R
 
 ```{r}
-#| echo: false
-p1 <- gapminder %>% 
-  group_by(world_region) %>% 
-  summarise(mean_income = mean(income_per_person)) %>% 
-  ungroup() %>% 
-  ggplot(aes(x = world_region, y = mean_income)) +
-  geom_bar(stat = "identity") +
-  theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-  labs(x = "World region", y = "Mean income")
+region_le <- gapminder |>
+  group_by(region) |>
+  summarise(life_expectancy = mean(life_expectancy))
+
+region_le
 ```
 
-```{r}
-#| echo: false
-p2 <- gapminder %>% 
-  group_by(world_region) %>% 
-  summarise(mean_income = mean(income_per_person)) %>% 
-  ungroup() %>% 
-  ggplot(aes(x = fct_reorder(world_region, mean_income),
-             y = mean_income)) +
-  geom_bar(stat = "identity") +
-  theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-  labs(x = "World region", y = "Mean income")
-```
+## Python
 
-```{r}
-#| echo: false
-p1 + p2 + plot_annotation(title = "Same data, different purpose",
-                          tag_levels = "A")
+```{python}
+region_le = (gapminder
+             .groupby("region", as_index=False)["life_expectancy"]
+             .mean())
+region_le
 ```
-
 :::
 
-So what happened here? Both plots show the average income across the countries within each world region. In panel A the different regions are **ordered** alphabetically, whereas in panel B they are displayed or **ranked** by average income.
+## Sort by value <span class="badge-core">Core</span>
 
-Same data, but a different purpose! When would we use one or the other?
-
-If we simply wanted a look-up table, where we could easily find the average income for a specific world region, then we would want to use the representation in panel A. Let's say we want to find the value for South Asia - we'd follow along the x-axis in alphabetical order. Doing the same in panel B is actually much harder.
-
-If we're interested in the world regions with particularly high average levels of income, then panel B would be more suitable. We'd simply look at the world regions that are displayed towards the right of the plot.
-
-## Reordering data
-
-The process of reordering your data, depending on the purpose of your visualisation, can be a bit tricky.
-
-To understand this a bit better it's important to get our head round some different categorical data types, wonderfully illustrated by [Allison Horst](https://github.com/allisonhorst):
-
-![](images/data-types.png)
-
-The type we are focusing on is the **ordinal** data. These are descriptions (so not numerical data) that have some kind of order.
-
-This can be an inherent order, for example a range of emotions from good to bad. Using the illustration we'd expect the bee to feel `awesome`, `ok` and `unhappy` in that order.
-
-It can also be an order that we are imposing ourselves. Again, using the illustration we can talk about `turtle`, `snail` and `butterfly`. These have no inherent order, but maybe we want to impose one, such as alphabetical order. If we'd do that, they would be arranged as `butterfly`, `snail`, `turtle`.
-
-The way that programming languages deal with this kind of ordering is through **factors**. These are categorical data that have a fixed and known set of values.
-
-Let's illustrate this with the bee example. Assume we followed a certain bee for 5 hours and recorded it emotional state once per hour. We could, hypothetically of course, end up with the following observations:
-
-`ok`, `awesome`, `unhappy`, `ok`, `unhappy`
-
-The bee was clearly not having the best of days. But I digress.
+By default, categories appear in alphabetical order, which is almost never what the reader needs. Sorting by value turns a lookup table into a ranking.
 
 ::: {.panel-tabset group="language"}
 ## R
 
-If we wanted to code these states in R, then we would do the following:
+In R, `fct_reorder()` reorders a categorical variable by another variable.
 
 ```{r}
-bee <- c("ok", "awesome", "unhappy", "ok", "unhappy")
-
-bee
+#| fig-height: 3.5
+ggplot(region_le, aes(x = life_expectancy, y = fct_reorder(region, life_expectancy))) +
+  geom_col() +
+  labs(x = "Mean life expectancy (years)", y = NULL)
 ```
 
-They appear in the order that I observed them. Now let's say that I want to impose a certain order on them, maybe alphabetically. I could take my `bee` object and convert it to a factor.
+Putting the categories on the y axis gives horizontal bars, so long names have room.
 
-```{r}
-bee_factor <- factor(bee)
+## Python
 
-bee_factor
+In Python, set the order by turning the column into an ordered category. plotnine draws horizontal bars with `coord_flip()`.
+
+```{python}
+order = region_le.sort_values("life_expectancy")["region"]
+region_le["region"] = pd.Categorical(region_le["region"], categories=order)
+
+p = (ggplot(region_le, aes(x="region", y="life_expectancy"))
+     + geom_col()
+     + coord_flip()
+     + labs(x="", y="Mean life expectancy (years)")
+     + theme(figure_size=(7, 3.5)))
+p.show()
 ```
 
-The first line still gives me the 5 observations in their original order, but below it there are `Levels: awesome ok unhappy`.
-
-What's happened here is that R recognises that there are three distinct possible values in our data, `awesome`, `ok` and `unhappy`. And it's ordered them alphabetically, which is the default.
-
-If I'd want to change this order, I can specify the levels directly:
-
-```{r}
-factor(bee_factor, levels = c("unhappy", "ok", "awesome"))
-```
+Note that with `coord_flip()` the `x` and `y` labels refer to the original axes, before flipping.
 :::
 
-Now let's see how we translate this to our data set. Let's create box plots for `income_per_person` for each main religion. We'll look at the default order, and then change it.
+::: {.callout-important}
+#### Design principle: order is information
 
-::: {.panel-tabset group="language"}
-## R
-
-Income per person for each religion:
-
-```{r}
-ggplot(data = gapminder,
-       aes(x = main_religion, y = income_per_person)) +
-  geom_boxplot()
-```
-
-This is in alphabetical order, by default.
-
-Let's say we wanted to change it. One of the ways we could do this is by making the `main_religion` column a factor and changing its order. Let's say we wanted to arrange them in order of average income. We could find this out by calculating the average income for each religion:
-
-```{r}
-gapminder %>% 
-  group_by(main_religion) %>% 
-  summarise(mean_income = mean(income_per_person)) %>% 
-  arrange(mean_income) %>% 
-  ungroup()
-```
-
-We would then order the data as follows:
-
-```{r}
-gapminder %>% 
-  mutate(main_religion = factor(main_religion,
-                                levels = c("eastern religions", "muslim", "christian"))) %>% 
-  ggplot(aes(x = main_religion, y = income_per_person)) +
-  geom_boxplot()
-```
-
-This works, but you can imagine that if you have lots of groups then doing this by manually specifying the levels becomes very (very!) tedious.
-
-Thankfully there is another way of doing exactly the same, without manual specifying the order. This uses the `fct_reorder()` function to... reorder the factor (what's in the name?!).
-
-The way that it works is that you give it the data you want to reorder, then tell it what to reorder by. In our case we want to reorder by the mean income for each religion, so we need to calculate that first.  After that we reorder the data directly within `ggplot()`:
-
-```{r}
-gapminder %>% 
-  # group by main religion
-  group_by(main_religion) %>% 
-  # create a new column that contains the average
-  # income for that type of religion
-  mutate(mean_income = mean(income_per_person)) %>% 
-  # remove the grouping
-  ungroup() %>% 
-  # send the data to ggplot
-  # and fct_reorder the main_religion on the x-axis
-  # based on the calculated mean_income
-  ggplot(aes(x = fct_reorder(main_religion, mean_income),
-             y = income_per_person)) +
-  # create box plots
-  geom_boxplot()
-```
-
+Sort by the value unless the categories have a natural order of their own, such as age groups, months, or dose levels. Then keep the natural order.
 :::
 
-## Stem plots
+## Dot plots and lollipops <span class="badge-core">Core</span>
 
-The bar plot was useful when there weren't too many observations. However, if we have lots of observations, then it can become a bit crowded. Have a look at the plot below, where we're looking at the income per person for all the countries in the Middle East / North Africa region:
+Bars must start at zero, because we read their length. When all values are far from zero, or there are many categories, a dot plot uses less ink and lets the axis focus on the range that matters.
 
 ::: {.panel-tabset group="language"}
 ## R
 
 ```{r}
-gapminder %>% 
-  filter(world_region == "middle_east_north_africa") %>% 
-  ggplot(aes(x = country, y = income_per_person)) +
-  geom_bar(stat = "identity") +
-  theme(axis.text.x = element_text(angle = 45, hjust=1))
+#| fig-height: 3.5
+ggplot(region_le, aes(x = life_expectancy, y = fct_reorder(region, life_expectancy))) +
+  geom_segment(aes(x = 55, xend = life_expectancy, yend = region), colour = "grey70") +
+  geom_point(size = 4, colour = "#003E72") +
+  labs(x = "Mean life expectancy (years)", y = NULL)
 ```
 
+## Python
+
+```{python}
+p = (ggplot(region_le, aes(x="region", y="life_expectancy"))
+     + geom_segment(aes(xend="region", y=55, yend="life_expectancy"), color="#B3B3B3")
+     + geom_point(size=4, color="#003E72")
+     + coord_flip()
+     + labs(x="", y="Mean life expectancy (years)")
+     + theme(figure_size=(7, 3.5)))
+p.show()
+```
 :::
 
-Another way that we could display those data is by creating a stem plot (or lollipop plot).
+This is a *lollipop* chart: a dot plot with a thin line to guide the eye. Because the stick starts at 55 rather than 0, the length of the stick means nothing on its own. That is fine for dots and lollipops, but not for bars.
+
+## Top and bottom <span class="badge-ext">Extension</span>
+
+With many categories, show only the ones that matter for the message, and say so in the title.
 
 ::: {.panel-tabset group="language"}
 ## R
 
 ```{r}
-gapminder %>% 
-  filter(world_region == "middle_east_north_africa") %>% 
-  ggplot(aes(x = country, y = income_per_person)) +
-  geom_point() +
-  geom_segment(aes(xend = country, yend = 0)) +
-  theme(axis.text.x = element_text(angle = 45, hjust=1))
+#| fig-height: 3.8
+gapminder |>
+  slice_max(child_mortality, n = 10) |>
+  ggplot(aes(x = child_mortality, y = fct_reorder(country, child_mortality))) +
+  geom_col(fill = "#D6083B") +
+  labs(title = "The ten countries with the highest child mortality in 2010",
+       x = "Deaths before age 5 per 1,000 births", y = NULL)
 ```
 
+## Python
+
+```{python}
+top10 = gapminder.nlargest(10, "child_mortality").copy()
+order = top10.sort_values("child_mortality")["country"]
+top10["country"] = pd.Categorical(top10["country"], categories=order)
+
+p = (ggplot(top10, aes(x="country", y="child_mortality"))
+     + geom_col(fill="#D6083B")
+     + coord_flip()
+     + labs(title="The ten countries with the highest child mortality in 2010",
+            x="", y="Deaths before age 5 per 1,000 births")
+     + theme(figure_size=(7, 3.8)))
+p.show()
+```
 :::
 
-This type of plot can be useful if you have lots of categories, since each category takes up a bit less space than a bar.
+## Parts of a whole <span class="badge-ext">Extension</span>
 
-### Exercises
-
-::: {.callout-note icon="false"}
-## Reordering data FIXME
-
-**Level:** {{< fa solid star >}} {{< fa solid star >}} {{< fa regular star >}}
-
-Below is a chunk of code. In several places the code states `<FIXME>`. Try to make the necessary changes, so that you end up with a stem plot that displays the number of children per woman, for each country in Europe and Central Asia. 
-Reorder the data by number of children per woman, from high to low.
-
-Which country has the **second highest** number of children per woman?
+Pie charts encode values as angles and areas, which we compare poorly. For shares, a single stacked bar or a set of sorted bars is usually clearer. Here is the share of countries in each income group, by region.
 
 ::: {.panel-tabset group="language"}
 ## R
 
 ```{r}
-#| eval: false
-gapminder %>% 
-  filter(world_region == <FIXME>) %>% 
-  ggplot(aes(x = fct_reorder(country,
-                             <FIXME>(children_per_woman)),
-             y = children_per_woman)) +
-  geom_point() +
-  geom_segment(aes(xend = <FIXME>, yend = 0)) +
-  theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-  labs(x = "Country",
-       y = "Children per woman")
+#| fig-height: 3.8
+gapminder |>
+  mutate(income_groups = fct_relevel(income_groups, "low_income", "lower_middle_income",
+                                     "upper_middle_income", "high_income")) |>
+  ggplot(aes(y = region, fill = income_groups)) +
+  geom_bar(position = "fill") +
+  scale_x_continuous(labels = scales::label_percent()) +
+  scale_fill_brewer(palette = "Blues",
+                    labels = c("Low", "Lower middle", "Upper middle", "High")) +
+  labs(x = "Share of countries", y = NULL, fill = "Income group")
 ```
 
+## Python
+
+```{python}
+levels = ["low_income", "lower_middle_income", "upper_middle_income", "high_income"]
+gapminder["income_groups"] = pd.Categorical(gapminder["income_groups"], categories=levels)
+
+p = (ggplot(gapminder, aes(x="region", fill="income_groups"))
+     + geom_bar(position="fill")
+     + coord_flip()
+     + scale_y_continuous(labels=lambda breaks: [f"{b:.0%}" for b in breaks])
+     + scale_fill_brewer(palette="Blues",
+                         labels=["Low", "Lower middle", "Upper middle", "High"])
+     + labs(x="", y="Share of countries", fill="Income group")
+     + theme(figure_size=(7, 3.8)))
+p.show()
+```
 :::
 
-::: {.callout-tip collapse="true"}
-## Answer
+Income groups have a natural order, so we set it explicitly and used a *sequential* palette (light to dark) to match. See [Colour with purpose](colour.qmd).
+
+## Exercises
+
+::: {.callout-exercise}
+#### Ranked income
+
+{{< level 1 >}}
+
+Make a horizontal bar chart of median income per person by region, sorted from highest to lowest.
+
+::: {.callout-answer collapse="true"}
 
 ::: {.panel-tabset group="language"}
 ## R
 
 ```{r}
-gapminder %>% 
-  filter(world_region == "europe_central_asia") %>% 
-  ggplot(aes(x = fct_reorder(country,
-                             desc(children_per_woman)),
-             y = children_per_woman)) +
-  geom_point() +
-  geom_segment(aes(xend = country, yend = 0)) +
-  theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-  labs(x = "Country",
-       y = "Children per woman")
+#| fig-height: 3.5
+gapminder |>
+  group_by(region) |>
+  summarise(income = median(income_per_person)) |>
+  ggplot(aes(x = income, y = fct_reorder(region, income))) +
+  geom_col(fill = "#0072CF") +
+  scale_x_continuous(labels = scales::label_dollar(accuracy = 1)) +
+  labs(x = "Median income per person", y = NULL)
 ```
 
+## Python
+
+```{python}
+income = gapminder.groupby("region", as_index=False)["income_per_person"].median()
+order = income.sort_values("income_per_person")["region"]
+income["region"] = pd.Categorical(income["region"], categories=order)
+
+p = (ggplot(income, aes(x="region", y="income_per_person"))
+     + geom_col(fill="#0072CF")
+     + coord_flip()
+     + scale_y_continuous(labels=lambda breaks: [f"${b:,.0f}" for b in breaks])
+     + labs(x="", y="Median income per person")
+     + theme(figure_size=(7, 3.5)))
+p.show()
+```
 :::
 
-The country with the second highest number of children per woman is the Kyrgyz Republic (Kyrgyzstan).
+In R, sorting with `fct_reorder()` puts the largest value at the top of a horizontal bar chart, because the y axis counts upwards from the bottom.
+:::
+:::
+
+::: {.callout-exercise}
+#### Bars or dots?
+
+{{< level 2 >}}
+
+Make a dot plot of mean bill length per penguin species. Then make it as a bar chart. Which works better, and why?
+
+::: {.callout-answer collapse="true"}
+
+::: {.panel-tabset group="language"}
+## R
+
+```{r}
+#| fig-height: 3
+penguins |>
+  group_by(species) |>
+  summarise(bill = mean(bill_length_mm, na.rm = TRUE)) |>
+  ggplot(aes(x = bill, y = fct_reorder(species, bill))) +
+  geom_point(size = 4) +
+  labs(x = "Mean bill length (mm)", y = NULL)
+```
+
+## Python
+
+```{python}
+bill = penguins.groupby("species", as_index=False)["bill_length_mm"].mean()
+order = bill.sort_values("bill_length_mm")["species"]
+bill["species"] = pd.Categorical(bill["species"], categories=order)
+
+p = (ggplot(bill, aes(x="species", y="bill_length_mm"))
+     + geom_point(size=4)
+     + coord_flip()
+     + labs(x="", y="Mean bill length (mm)")
+     + theme(figure_size=(7, 3)))
+p.show()
+```
+:::
+
+All three means are between 38 and 49 mm. As bars starting from zero, the bars look almost the same length. As dots, the axis can zoom to the range of the data and the differences are clear. Better still would be to show the full distribution, as in [Distributions](distributions.qmd).
 :::
 :::
 
@@ -311,7 +338,9 @@ The country with the second highest number of children per woman is the Kyrgyz R
 ::: {.callout-tip}
 #### Key points
 
-- Ranking or ordering your data in a particular way can help tell a story
-- Programming languages use factors to deal with categories that have an inherent order
-
+- `geom_bar()` counts rows; `geom_col()` draws values you have calculated.
+- Sort categories by value unless they have a natural order.
+- Horizontal bars give long labels room.
+- Bars start at zero; dot plots and lollipops do not need to.
+- Prefer sorted or stacked bars to pie charts for comparing shares.
 :::

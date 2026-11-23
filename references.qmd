@@ -1,6 +1,19 @@
 ---
-title: "References"
+number-sections: false
 ---
+
+# References and further reading {.unnumbered}
+
+## Where to go next
+
+- @franconeri2021: a readable review of the research evidence on what works in visual communication.
+- @wilke2019: a free online book with excellent side-by-side good and bad examples, written by a ggplot2 developer.
+- @healy2018: a free online book teaching ggplot2 with social science data.
+- @rougier2014: ten short, practical rules for better scientific figures.
+- @crameri2020: why rainbow colour maps distort data and exclude readers, and what to use instead.
+- @weissgerber2015: why bar charts of means hide the data, with practical alternatives.
+
+## All references
 
 ::: {#refs}
 :::

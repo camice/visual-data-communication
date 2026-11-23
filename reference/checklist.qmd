@@ -1,0 +1,63 @@
+---
+number-sections: false
+---
+
+# Figure checklist {.unnumbered}
+
+Use this page to check your own figures and to give feedback to others. Work from the top: there is no point adjusting colours if the message is unclear.
+
+## Five questions
+
+::: {.five-q}
+- **Message.** What should someone take away in five seconds?
+- **Audience.** Who is it for, and what do they already know?
+- **Chart.** Does the chart type fit the question?
+- **Attention.** Where does the eye go first? Is that where the message is?
+- **Integrity.** Is it honest, readable at its final size, and accessible?
+:::
+
+::: {.callout-important}
+#### The five-second test
+
+Show the figure to someone for five seconds, then hide it. Ask what they remember. If it is not your headline, the figure needs work.
+:::
+
+## Detailed checklist
+
+### Message
+
+- [ ] I can write the message as one sentence.
+- [ ] The title (or the first sentence of the legend) states that message.
+- [ ] Everything on the figure supports the message; anything that does not has been removed or moved to a supplement.
+
+### Audience
+
+- [ ] The level of detail suits the audience: full detail for a paper, one point for a talk, plain language for the public.
+- [ ] Jargon and abbreviations are explained or removed.
+- [ ] A figure from a paper has been remade for a talk, not copied.
+
+### Chart
+
+- [ ] The chart type matches the question: distribution, comparison, relationship, change or part to whole.
+- [ ] The most important comparison uses position or length, not angle, area or colour.
+- [ ] Continuous data is shown as points or distributions, not only as bars of means.
+
+### Attention
+
+- [ ] Categories are sorted by value, or by their natural order.
+- [ ] Colour is used for a reason; supporting data is grey.
+- [ ] Labels are placed directly on the data where possible, instead of in a legend.
+- [ ] Grid lines, borders and backgrounds are light or removed.
+
+### Integrity
+
+- [ ] Bars start at zero. Zoomed axes use points or lines and are clearly labelled.
+- [ ] Log scales are labelled as log scales.
+- [ ] There are no dual y axes.
+- [ ] The palette suits the data: sequential, diverging or qualitative, and not a rainbow.
+- [ ] The colours work for colour vision deficiency, and colour is never the only cue.
+- [ ] Text is readable at the final size (check at 100% zoom).
+- [ ] Axis labels use plain words and units.
+- [ ] The source of the data is given.
+- [ ] The figure has alt text when it is published online. A good pattern is: chart type, what is plotted, then the message.
+- [ ] The figure is made by a script and can be remade if the data changes.
