@@ -1,0 +1,1509 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Visual Data Communication",
+    "section": "",
+    "text": "Welcome\nBy the end of this course you will be able to make changes like this one, in R or Python, and explain every decision.",
+    "crumbs": [
+      "Welcome",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Visual Data Communication",
+    "section": "Overview",
+    "text": "Overview\nA good figure lets someone understand your result in seconds. A poor one hides it, misleads, or simply gets skipped. This course teaches you to design figures with a purpose, and to build them in R (with ggplot2) or Python (with plotnine).\nWe start from the message and the audience, not the software. You will learn how to choose a chart that fits your question, how to use colour, ordering and labelling to direct attention, and how to produce figures that are honest, accessible and reproducible.\n\n\n\n\n\n\nTipLearning objectives\n\n\n\n\nDistinguish between figures for exploring data and figures for explaining it.\nChoose a chart type that fits your question and your audience.\nUse colour, ordering and labelling to direct attention to your message.\nBuild, refine and export figures in layers using ggplot2 or plotnine.\nCritique any figure using five simple questions.",
+    "crumbs": [
+      "Welcome",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#course-map",
+    "href": "index.html#course-map",
+    "title": "Visual Data Communication",
+    "section": "Course map",
+    "text": "Course map\nThe materials follow the same path as a figure: understand the data, design for the reader, then finish the figure properly.\n\n  FoundationsBuild any plot in layers with the grammar of graphics.\n  Explore your dataDistributions, relationships and change over time.\n  Design for attentionOrdering, colour, labels and annotation.\n  Finish your figuresHonest axes, multi-panel figures, export and a final makeover.",
+    "crumbs": [
+      "Welcome",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#how-to-use-these-materials",
+    "href": "index.html#how-to-use-these-materials",
+    "title": "Visual Data Communication",
+    "section": "How to use these materials",
+    "text": "How to use these materials\nEvery code example is available in R and Python. Use the tabs above each code block to switch; your choice is remembered across pages.\nEach chapter has the same structure:\n\nLearning objectives at the top, so you know where you are heading.\nShort explanations with worked examples you can copy and run.\nExercises marked by level, from one star (getting started) to three stars (more challenging).\nSections marked Core are needed for later chapters. Sections marked Extension are optional, for when you finish early or want to go further.\nKey points at the end, for quick revision.\n\n\nWays this course is taught\n\n\n\nFormat\nWhat happens\nMaterials used\n\n\n\n\nHalf-day course\nTalks and small group discussion of design principles\nSlides; this site for further practice\n\n\nFull-day course\nShort talks alternating with four practical sessions\nSlides and every chapter of this site\n\n\nWorkshop (3 hours)\nA talk, peer feedback on your own figures, then a makeover sprint\nSlides, the checklist and recipes\n\n\n\nThe materials also work for self-study. Start with The design process, then work through the chapters in order.",
+    "crumbs": [
+      "Welcome",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#target-audience",
+    "href": "index.html#target-audience",
+    "title": "Visual Data Communication",
+    "section": "Target audience",
+    "text": "Target audience\nResearchers at any stage who need to communicate data: PhD students, postdocs and staff, from any discipline. The examples use social, health and biological data so that nobody needs specialist knowledge to follow them.",
+    "crumbs": [
+      "Welcome",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#prerequisites",
+    "href": "index.html#prerequisites",
+    "title": "Visual Data Communication",
+    "section": "Prerequisites",
+    "text": "Prerequisites\nA basic working knowledge of either R or Python: you should be able to read a data file and run a few lines of code. If you are new to programming, CRIT runs introductory courses in both languages several times a year; see the course timetable.",
+    "crumbs": [
+      "Welcome",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#authors",
+    "href": "index.html#authors",
+    "title": "Visual Data Communication",
+    "section": "Authors",
+    "text": "Authors\n\nCamice Revier\nAffiliation: Cambridge Centre for Research Informatics Training, University of Cambridge\nRoles: conceptualisation; writing (redesign of the course and materials); coding\n\nThis version is a redesign of the original course by:\n\nMartin van Rongen\nAffiliation: Bioinformatics Training Facility, University of Cambridge\nRoles: writing (original draft); conceptualisation; coding\nHugo Tavares\nAffiliation: Bioinformatics Training Facility, University of Cambridge\nRoles: writing (review and editing); coding\nMatt Castle\nAffiliation: Bioinformatics Training Facility, University of Cambridge\nRoles: conceptualisation",
+    "crumbs": [
+      "Welcome",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "index.html#data",
+    "href": "index.html#data",
+    "title": "Visual Data Communication",
+    "section": "Data",
+    "text": "Data\nThe course uses three openly available datasets:\n\nPalmer penguins: body measurements for three penguin species (Horst et al. 2020).\nGapminder: socioeconomic and health indicators by country, 1960 to 2010 (Gapminder Foundation 2024).\nDarwin’s finches: beak and body measurements from the Galápagos, from the earlier version of this course.\n\n\n\n\n\nGapminder Foundation. 2024. Gapminder Data. https://www.gapminder.org/data/.\n\n\nHorst, Allison M., Alison P. Hill, and Kristen B. Gorman. 2020. Palmerpenguins: Palmer Archipelago (Antarctica) Penguin Data. https://doi.org/10.5281/zenodo.3960218.",
+    "crumbs": [
+      "Welcome",
+      "Welcome"
+    ]
+  },
+  {
+    "objectID": "setup.html",
+    "href": "setup.html",
+    "title": "Data & setup",
+    "section": "",
+    "text": "Data\nAll the data used in the course comes as a single zip file. Download it and unzip it into the folder you will work in, so that you have a data folder next to your scripts.\nDownload data\nThe folder contains:\nA suggested folder layout:",
+    "crumbs": [
+      "Welcome",
+      "Data & setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#data",
+    "href": "setup.html#data",
+    "title": "Data & setup",
+    "section": "",
+    "text": "File\nWhat it contains\n\n\n\n\npenguins.csv\nBill, flipper and body measurements for 344 penguins of three species\n\n\ngapminder_2010.csv\nIncome, health and population indicators for 167 countries in 2010\n\n\ngapminder_1960_2010.csv\nThe same indicators for every year from 1960 to 2010\n\n\nfinches.csv\nBeak and body measurements for Darwin’s finches\n\n\n\n\nmy-figures/\n    data/\n        penguins.csv\n        ...\n    figures/        (save your figures here)\n    my_script.R     (or my_script.py)",
+    "crumbs": [
+      "Welcome",
+      "Data & setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#software",
+    "href": "setup.html#software",
+    "title": "Data & setup",
+    "section": "Software",
+    "text": "Software\nYou only need one of the two languages. Choose whichever you use in your own work.\n\nRPython\n\n\n\nInstall R (version 4.2 or later).\nInstall RStudio Desktop.\nOpen RStudio and run this in the console to install the packages:\n\ninstall.packages(c(\"tidyverse\", \"patchwork\", \"scales\", \"colorspace\", \"Hmisc\"))\n\nCheck everything works:\n\nlibrary(tidyverse)\nggplot(mtcars, aes(x = wt, y = mpg)) + geom_point()\nIf you see a scatter plot, you are ready.\n\n\n\nInstall Python 3.10 or later, from python.org or with Miniforge.\nInstall Visual Studio Code with the Python extension, or use JupyterLab.\nIn a terminal, install the packages:\n\npip install pandas plotnine\nor, with conda:\nconda install -c conda-forge pandas plotnine\n\nCheck everything works:\n\nimport pandas as pd\nfrom plotnine import ggplot, aes, geom_point\nfrom plotnine.data import mtcars\n\np = ggplot(mtcars, aes(x=\"wt\", y=\"mpg\")) + geom_point()\np.show()\nIf you see a scatter plot, you are ready.\n\n\n\n\n\n\n\n\n\nNoteCan’t install software?\n\n\n\nYou can follow the R materials in Posit Cloud and the Python materials in Google Colab through a web browser. Upload the data folder to your project first.",
+    "crumbs": [
+      "Welcome",
+      "Data & setup"
+    ]
+  },
+  {
+    "objectID": "setup.html#why-ggplot2-and-plotnine",
+    "href": "setup.html#why-ggplot2-and-plotnine",
+    "title": "Data & setup",
+    "section": "Why ggplot2 and plotnine?",
+    "text": "Why ggplot2 and plotnine?\nBoth packages implement the same grammar of graphics, so the code looks almost identical in the two languages. The main difference is that Python puts column names in quotes:\n\nRPython\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point()\n\n\n(ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\"))\n + geom_point())\n\n\n\nLearn the ideas once, and you can use them in either language.",
+    "crumbs": [
+      "Welcome",
+      "Data & setup"
+    ]
+  },
+  {
+    "objectID": "design-process.html",
+    "href": "design-process.html",
+    "title": "The design process",
+    "section": "",
+    "text": "Two jobs for a figure\nFigures do one of two jobs.\nExploring is for you. You make many quick, rough plots to find out what is in your data. Default settings are fine, and speed matters more than beauty.\nExplaining is for someone else. You have found something, and you design one figure to show it clearly, without you there to talk it through.\nThe most common problem in papers and talks is an exploratory plot shown to an audience as if it were an explanatory figure: default settings, no clear message, and the reader left to work it out.",
+    "crumbs": [
+      "Welcome",
+      "The design process"
+    ]
+  },
+  {
+    "objectID": "design-process.html#why-we-always-explore-first",
+    "href": "design-process.html#why-we-always-explore-first",
+    "title": "The design process",
+    "section": "Why we always explore first",
+    "text": "Why we always explore first\nThe four small datasets below have the same means, variances, correlation and fitted regression line, to two decimal places (Anscombe 1973). Summarised as numbers they look identical. Plotted, they tell four completely different stories.\n\n\n\n\nAnscombe’s quartet. Each grey line is the same fitted regression: y = 3.0 + 0.5x.\n\n\n\nSummary statistics compress your data, and the compression can hide exactly what matters: curves, outliers and clusters. Plot first, then summarise, model or test.",
+    "crumbs": [
+      "Welcome",
+      "The design process"
+    ]
+  },
+  {
+    "objectID": "design-process.html#a-process-for-explanatory-figures",
+    "href": "design-process.html#a-process-for-explanatory-figures",
+    "title": "The design process",
+    "section": "A process for explanatory figures",
+    "text": "A process for explanatory figures\nMost of the work of a good figure happens before any code is written.\n\nQuestion→ Explore→ Message→ Audience→ Sketch→ Build→ Critique↻\n\n\nQuestion and explore. What are you asking, and what does the data actually look like? Chapters 2 to 4 cover this.\nMessage. Write the message as one sentence: a headline, not a label. “Life expectancy by region” is a label. “Sub-Saharan Africa trails every other region by over 10 years” is a headline. If you cannot write the sentence, the figure cannot show it.\nAudience. A reader of your paper can study a figure for minutes. A conference audience sees your slide for thirty seconds while listening to you. A public audience may not know your field’s conventions. The audience decides how much detail, how much text and how big.\nSketch. Draw two or three versions on paper before opening any software. It takes five minutes and stops you spending an hour perfecting the wrong chart.\nBuild. Only now do you write code. Chapters 5 to 9 cover the techniques.\nCritique. Show it to someone, ask what they take away, and go round again.\n\n\n\n\nThree quick sketches for the same data, each with its own headline idea.",
+    "crumbs": [
+      "Welcome",
+      "The design process"
+    ]
+  },
+  {
+    "objectID": "design-process.html#choose-the-chart-by-the-question",
+    "href": "design-process.html#choose-the-chart-by-the-question",
+    "title": "The design process",
+    "section": "Choose the chart by the question",
+    "text": "Choose the chart by the question\nMost research figures answer one of five questions. Choose the question first, then the chart.\n\n\n\nQuestion\nWhat the reader compares\nTypical charts\nChapter\n\n\n\n\nDistribution\nHow values are spread\nHistogram, box plot, violin, dots\nDistributions\n\n\nComparison\nWhich is bigger, and the order\nSorted bar, dot plot, lollipop\nRanking\n\n\nRelationship\nWhether one goes with another\nScatter plot, heatmap\nRelationships\n\n\nChange\nHow something moves over time\nLine, small multiples\nChange over time\n\n\nPart to whole\nWhat share each part is\nStacked bar, sometimes a pie\nRanking",
+    "crumbs": [
+      "Welcome",
+      "The design process"
+    ]
+  },
+  {
+    "objectID": "design-process.html#how-we-read-figures",
+    "href": "design-process.html#how-we-read-figures",
+    "title": "The design process",
+    "section": "How we read figures",
+    "text": "How we read figures\nWe read some visual properties more accurately than others. In classic experiments, people judged values most accurately from position along a common scale, then length, then angle and area, with colour intensity least accurate (Cleveland and McGill 1984). That is why a sorted bar chart beats a pie chart for comparing similar values.\nColour, on the other hand, is seen before we consciously look. A single strong colour among grey draws the eye instantly. That makes colour the best tool for directing attention, and the worst for reading exact values. A recent review of the evidence is given by Franconeri et al. (2021).",
+    "crumbs": [
+      "Welcome",
+      "The design process"
+    ]
+  },
+  {
+    "objectID": "design-process.html#five-questions-for-any-figure",
+    "href": "design-process.html#five-questions-for-any-figure",
+    "title": "The design process",
+    "section": "Five questions for any figure",
+    "text": "Five questions for any figure\nUse these to check your own figures and to give feedback to others. Work through them in order: there is no point discussing colours if the message is unclear.\n\n\nMessage. What should someone take away in five seconds?\nAudience. Who is it for, and what do they already know?\nChart. Does the chart type fit the question?\nAttention. Where does the eye go first? Is that where the message is?\nIntegrity. Is it honest, readable at its final size, and accessible?\n\n\n\n\n\n\n\n\nImportantThe five-second test\n\n\n\nShow your figure to someone for five seconds, then hide it. Ask what they remember. If it is not your headline, the figure needs work.",
+    "crumbs": [
+      "Welcome",
+      "The design process"
+    ]
+  },
+  {
+    "objectID": "design-process.html#summary",
+    "href": "design-process.html#summary",
+    "title": "The design process",
+    "section": "Summary",
+    "text": "Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nExploratory figures are for you; explanatory figures are for your reader. Different rules apply.\nAlways plot the data before summarising it.\nWrite the headline first, then design the figure to show it.\nChoose the chart by the question: distribution, comparison, relationship, change or part to whole.\nTest figures with the five questions and a fresh pair of eyes.\n\n\n\n\n\n\n\nAnscombe, F. J. 1973. “Graphs in Statistical Analysis.” The American Statistician 27 (1): 17–21. https://doi.org/10.1080/00031305.1973.10478966.\n\n\nCleveland, William S., and Robert McGill. 1984. “Graphical Perception: Theory, Experimentation, and Application to the Development of Graphical Methods.” Journal of the American Statistical Association 79 (387): 531–54. https://doi.org/10.1080/01621459.1984.10478080.\n\n\nFranconeri, Steven L., Lace M. Padilla, Priti Shah, Jeffrey M. Zacks, and Jessica Hullman. 2021. “The Science of Visual Data Communication: What Works.” Psychological Science in the Public Interest 22 (3): 110–61. https://doi.org/10.1177/15291006211051956.",
+    "crumbs": [
+      "Welcome",
+      "The design process"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html",
+    "href": "materials/building-a-plot.html",
+    "title": "1  Building a plot in layers",
+    "section": "",
+    "text": "1.1 The grammar of graphics Core\nBoth ggplot2 (R) and plotnine (Python) are based on the grammar of graphics (Wickham 2010). Instead of choosing from a menu of chart types, you describe a plot in parts:\nYou add these parts together with +. Change one part, and only that part of the plot changes. This makes it easy to try ideas quickly.",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#the-grammar-of-graphics-core",
+    "href": "materials/building-a-plot.html#the-grammar-of-graphics-core",
+    "title": "1  Building a plot in layers",
+    "section": "",
+    "text": "Part\nQuestion it answers\nExample\n\n\n\n\nData\nWhich data frame?\npenguins\n\n\nAesthetics (aes)\nWhich variable goes on which visual property?\nbill length on x, bill depth on y\n\n\nGeometries (geom_)\nWhat marks are drawn?\npoints, lines, bars\n\n\nScales\nHow are values turned into positions and colours?\nlog axis, a colour palette\n\n\nTheme\nHow do the non-data parts look?\nfonts, grid lines, background",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#load-packages-and-data",
+    "href": "materials/building-a-plot.html#load-packages-and-data",
+    "title": "1  Building a plot in layers",
+    "section": "1.2 Load packages and data",
+    "text": "1.2 Load packages and data\n\nRPython\n\n\n\nlibrary(tidyverse)\n\npenguins &lt;- read_csv(\"data/penguins.csv\")\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;chr&gt;   &lt;chr&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;dbl&gt;       &lt;dbl&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;chr&gt;, year &lt;dbl&gt;\n\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\npenguins = pd.read_csv(\"data/penguins.csv\")\npenguins.head()\n\n\n\n\n\n\n\n\nspecies\nisland\nbill_length_mm\nbill_depth_mm\nflipper_length_mm\nbody_mass_g\nsex\nyear\n\n\n\n\n0\nAdelie\nTorgersen\n39.1\n18.7\n181.0\n3750.0\nmale\n2007\n\n\n1\nAdelie\nTorgersen\n39.5\n17.4\n186.0\n3800.0\nfemale\n2007\n\n\n2\nAdelie\nTorgersen\n40.3\n18.0\n195.0\n3250.0\nfemale\n2007\n\n\n3\nAdelie\nTorgersen\nNaN\nNaN\nNaN\nNaN\nNaN\n2007\n\n\n4\nAdelie\nTorgersen\n36.7\n19.3\n193.0\n3450.0\nfemale\n2007\n\n\n\n\n\n\n\n\n\n\nEach row is one penguin. We have its species, the island it was found on, bill length and depth, flipper length, body mass, sex and the year it was measured.",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#layer-1-data-and-aesthetics-core",
+    "href": "materials/building-a-plot.html#layer-1-data-and-aesthetics-core",
+    "title": "1  Building a plot in layers",
+    "section": "1.3 Layer 1: data and aesthetics Core",
+    "text": "1.3 Layer 1: data and aesthetics Core\nStart by saying which data to use, and which variables map to x and y.\n\nRPython\n\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm))\n\n\n\n\n\n\n\n\n\n\n\np = ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWe have axes, but no data is drawn. That is because we have not yet said how to draw it.",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#layer-2-a-geometry-core",
+    "href": "materials/building-a-plot.html#layer-2-a-geometry-core",
+    "title": "1  Building a plot in layers",
+    "section": "1.4 Layer 2: a geometry Core",
+    "text": "1.4 Layer 2: a geometry Core\nAdd points with geom_point().\n\nRPython\n\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\"))\n     + geom_point())\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWe can add more than one geometry. Here is a straight-line trend on top of the points:\n\nRPython\n\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE)\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\"))\n     + geom_point()\n     + geom_smooth(method=\"lm\", se=False))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nAt first sight, longer bills seem to be shallower. Keep that in mind.",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#layer-3-mapping-colour-core",
+    "href": "materials/building-a-plot.html#layer-3-mapping-colour-core",
+    "title": "1  Building a plot in layers",
+    "section": "1.5 Layer 3: mapping colour Core",
+    "text": "1.5 Layer 3: mapping colour Core\nNow map species to colour, inside aes().\n\nRPython\n\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, colour = species)) +\n  geom_point() +\n  geom_smooth(method = \"lm\", se = FALSE)\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\", color=\"species\"))\n     + geom_point()\n     + geom_smooth(method=\"lm\", se=False))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWithin every species, longer bills are deeper. The overall negative trend was created by mixing three groups with different averages. This is known as Simpson’s paradox, and we found it simply by adding one aesthetic. It is a good example of why exploring your data matters: it can change your conclusion, not just your figure.\n\n\n\n\n\n\nImportantDesign principle: aesthetics are inherited\n\n\n\nAnything inside ggplot(aes(...)) applies to every layer. That is why both the points and the trend lines were coloured by species, and why we got one trend line per species.",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#mapping-versus-setting-core",
+    "href": "materials/building-a-plot.html#mapping-versus-setting-core",
+    "title": "1  Building a plot in layers",
+    "section": "1.6 Mapping versus setting Core",
+    "text": "1.6 Mapping versus setting Core\nThis is the most common source of confusion for beginners.\n\nMapping links a visual property to a variable. It goes inside aes().\nSetting gives a visual property one fixed value. It goes outside aes().\n\n\nRPython\n\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(colour = \"steelblue\", size = 2, alpha = 0.6)\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\"))\n     + geom_point(color=\"steelblue\", size=2, alpha=0.6))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nHere every point is the same blue, at the same size, partly transparent. If you accidentally write aes(colour = \"steelblue\"), the software treats \"steelblue\" as a tiny dataset with one category, and you get a legend with a single entry and a default colour. Try it to see.",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#layer-4-labels-and-theme-core",
+    "href": "materials/building-a-plot.html#layer-4-labels-and-theme-core",
+    "title": "1  Building a plot in layers",
+    "section": "1.7 Layer 4: labels and theme Core",
+    "text": "1.7 Layer 4: labels and theme Core\nReadable labels and a cleaner theme make a big difference. Notice the title is a headline: it says what to notice.\n\nRPython\n\n\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, colour = species)) +\n  geom_point(alpha = 0.8) +\n  geom_smooth(method = \"lm\", se = FALSE) +\n  labs(title = \"Within each species, longer bills are deeper\",\n       x = \"Bill length (mm)\",\n       y = \"Bill depth (mm)\",\n       colour = \"Species\") +\n  theme_minimal(base_size = 13)\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\", color=\"species\"))\n     + geom_point(alpha=0.8)\n     + geom_smooth(method=\"lm\", se=False)\n     + labs(title=\"Within each species, longer bills are deeper\",\n            x=\"Bill length (mm)\",\n            y=\"Bill depth (mm)\",\n            color=\"Species\")\n     + theme_minimal(base_size=13))\np.show()",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#saving-a-plot-core",
+    "href": "materials/building-a-plot.html#saving-a-plot-core",
+    "title": "1  Building a plot in layers",
+    "section": "1.8 Saving a plot Core",
+    "text": "1.8 Saving a plot Core\nStore the plot in an object, then save it with an explicit size. Set the size to how big the figure will be when it is used, not how big it looks on your screen. We cover this properly in Multi-panel figures and export.\n\nRPython\n\n\n\np &lt;- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, colour = species)) +\n  geom_point()\n\nggsave(\"figures/bills.png\", p, width = 15, height = 10, units = \"cm\", dpi = 300)\n\n\n\n\np = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\", color=\"species\"))\n     + geom_point())\n\np.save(\"figures/bills.png\", width=15, height=10, units=\"cm\", dpi=300)",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#exercises",
+    "href": "materials/building-a-plot.html#exercises",
+    "title": "1  Building a plot in layers",
+    "section": "1.9 Exercises",
+    "text": "1.9 Exercises\n\n\n\n\n\n\nExerciseFlippers and body mass\n\n\n\n\n\n\n\nLevel: \nMake a scatter plot of flipper length (x) against body mass (y). Add readable axis labels with units.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point() +\n  labs(x = \"Flipper length (mm)\", y = \"Body mass (g)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"flipper_length_mm\", y=\"body_mass_g\"))\n     + geom_point()\n     + labs(x=\"Flipper length (mm)\", y=\"Body mass (g)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseMap and set\n\n\n\n\n\n\n\nLevel: \nStarting from your last plot:\n\nMap species to colour.\nSet all points to size 2.5 and transparency 0.7.\nAdd a theme of your choice, such as theme_classic() or theme_bw().\nWrite a headline title. What is the message?\n\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g, colour = species)) +\n  geom_point(size = 2.5, alpha = 0.7) +\n  labs(title = \"Gentoo penguins are the largest, with the longest flippers\",\n       x = \"Flipper length (mm)\", y = \"Body mass (g)\", colour = \"Species\") +\n  theme_classic(base_size = 13)\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"flipper_length_mm\", y=\"body_mass_g\", color=\"species\"))\n     + geom_point(size=2.5, alpha=0.7)\n     + labs(title=\"Gentoo penguins are the largest, with the longest flippers\",\n            x=\"Flipper length (mm)\", y=\"Body mass (g)\", color=\"Species\")\n     + theme_classic(base_size=13))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nOther headlines are possible, for example “Heavier penguins have longer flippers”. The point is to decide.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseShape as a second cue Extension\n\n\n\n\n\n\n\nLevel: \nMap species to both colour and shape. Why might this help some readers? What happens to the legend?\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nggplot(penguins, aes(x = flipper_length_mm, y = body_mass_g,\n                     colour = species, shape = species)) +\n  geom_point(size = 2.5, alpha = 0.7) +\n  labs(x = \"Flipper length (mm)\", y = \"Body mass (g)\",\n       colour = \"Species\", shape = \"Species\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"flipper_length_mm\", y=\"body_mass_g\",\n                          color=\"species\", shape=\"species\"))\n     + geom_point(size=2.5, alpha=0.7)\n     + labs(x=\"Flipper length (mm)\", y=\"Body mass (g)\",\n            color=\"Species\", shape=\"Species\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nUsing shape as well as colour means the groups can still be told apart in greyscale and by readers with colour vision deficiency. Because both legends have the same title, they are merged into one. Give them different titles and you get two separate legends.",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/building-a-plot.html#summary",
+    "href": "materials/building-a-plot.html#summary",
+    "title": "1  Building a plot in layers",
+    "section": "1.10 Summary",
+    "text": "1.10 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nA plot is built from data, aesthetics, geometries, scales and a theme, added together with +.\nVariables are mapped inside aes(); fixed values are set outside it.\nAesthetics in the main ggplot() call are inherited by every layer.\nAdding one aesthetic can change what you conclude, so explore before you explain.\nSave plots with an explicit width, height and resolution.\n\n\n\n\n\n\n\nWickham, Hadley. 2010. “A Layered Grammar of Graphics.” Journal of Computational and Graphical Statistics 19 (1): 3–28. https://doi.org/10.1198/jcgs.2009.07098.",
+    "crumbs": [
+      "**Foundations**",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Building a plot in layers</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html",
+    "href": "materials/distributions.html",
+    "title": "2  Distributions",
+    "section": "",
+    "text": "2.1 Why distributions matter\nA mean is one number. It cannot tell you whether values are symmetric or skewed, whether there are clusters, or whether one extreme value is pulling everything along. The two figures above show four groups with the same mean and standard error. As bars they look identical. As dots, they are completely different.\nBar charts of means with error bars are still common for continuous data, despite hiding exactly these patterns (Weissgerber et al. 2015). This chapter shows better options.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html#load-packages-and-data",
+    "href": "materials/distributions.html#load-packages-and-data",
+    "title": "2  Distributions",
+    "section": "2.2 Load packages and data",
+    "text": "2.2 Load packages and data\nWe use the finches data: beak and body measurements of Darwin’s finches, in four groups defined by when they were sampled (early or late) and beak shape (blunt or pointed).\n\nRPython\n\n\n\nlibrary(tidyverse)\n\nfinches &lt;- read_csv(\"data/finches.csv\")\npenguins &lt;- read_csv(\"data/penguins.csv\")\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\nfinches = pd.read_csv(\"data/finches.csv\")\npenguins = pd.read_csv(\"data/penguins.csv\")",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html#one-variable-histograms-core",
+    "href": "materials/distributions.html#one-variable-histograms-core",
+    "title": "2  Distributions",
+    "section": "2.3 One variable: histograms Core",
+    "text": "2.3 One variable: histograms Core\nA histogram splits the values into bins and counts how many fall in each.\n\nRPython\n\n\n\nggplot(finches, aes(x = bdepth)) +\n  geom_histogram(binwidth = 0.25, fill = \"grey60\", colour = \"white\") +\n  labs(x = \"Beak depth (mm)\", y = \"Number of finches\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(finches, aes(x=\"bdepth\"))\n     + geom_histogram(binwidth=0.25, fill=\"grey\", color=\"white\")\n     + labs(x=\"Beak depth (mm)\", y=\"Number of finches\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nImportantDesign principle: always choose the bin width\n\n\n\nThe default number of bins is rarely right. Too few bins hide structure; too many turn the histogram into noise. Try a few values and choose one that matches the precision of your measurements. Here, beak depth is measured to about 0.1 mm, so bins of 0.25 mm are reasonable.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html#comparing-groups-core",
+    "href": "materials/distributions.html#comparing-groups-core",
+    "title": "2  Distributions",
+    "section": "2.4 Comparing groups Core",
+    "text": "2.4 Comparing groups Core\nTo compare the four groups, we can split the histogram into panels with facet_wrap(). Putting the panels in one column lines up the x axes, so the shifts between groups are easy to see.\n\nRPython\n\n\n\nggplot(finches, aes(x = bdepth)) +\n  geom_histogram(binwidth = 0.25, fill = \"grey60\", colour = \"white\") +\n  facet_wrap(~ group, ncol = 1) +\n  labs(x = \"Beak depth (mm)\", y = \"Number of finches\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(finches, aes(x=\"bdepth\"))\n     + geom_histogram(binwidth=0.25, fill=\"grey\", color=\"white\")\n     + facet_wrap(\"group\", ncol=1)\n     + labs(x=\"Beak depth (mm)\", y=\"Number of finches\")\n     + theme(figure_size=(7, 5)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nHistograms work well for one to four groups. With more groups, the options below are easier to compare.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html#box-plots-violins-and-points-core",
+    "href": "materials/distributions.html#box-plots-violins-and-points-core",
+    "title": "2  Distributions",
+    "section": "2.5 Box plots, violins and points Core",
+    "text": "2.5 Box plots, violins and points Core\nA box plot summarises each group with five numbers: the median (thick line), the middle 50% of values (the box) and the range of typical values (the whiskers), with unusual values drawn as points.\n\nRPython\n\n\n\nggplot(finches, aes(x = group, y = bdepth)) +\n  geom_boxplot() +\n  labs(x = NULL, y = \"Beak depth (mm)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(finches, aes(x=\"group\", y=\"bdepth\"))\n     + geom_boxplot()\n     + labs(x=\"\", y=\"Beak depth (mm)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nA box plot still hides how many observations there are and how they are spread inside the box. Adding the raw points fixes that. geom_jitter() spreads the points sideways slightly so they do not sit on top of each other.\n\nRPython\n\n\n\nggplot(finches, aes(x = group, y = bdepth)) +\n  geom_boxplot(outlier.shape = NA, width = 0.5) +\n  geom_jitter(width = 0.15, alpha = 0.5, colour = \"#0072CF\") +\n  labs(x = NULL, y = \"Beak depth (mm)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(finches, aes(x=\"group\", y=\"bdepth\"))\n     + geom_boxplot(outlier_shape=\"\", width=0.5)\n     + geom_jitter(width=0.15, alpha=0.5, color=\"#0072CF\")\n     + labs(x=\"\", y=\"Beak depth (mm)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWe turned off the box plot’s own outlier points, because the jittered points already show every observation.\nA violin plot shows the full shape of each distribution, like a smoothed histogram mirrored on both sides. It is useful for larger samples, where individual points become crowded.\n\nRPython\n\n\n\nggplot(penguins, aes(x = species, y = flipper_length_mm)) +\n  geom_violin(fill = \"grey90\") +\n  geom_boxplot(width = 0.1, outlier.shape = NA) +\n  labs(x = NULL, y = \"Flipper length (mm)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"species\", y=\"flipper_length_mm\"))\n     + geom_violin(fill=\"#E5E5E5\")\n     + geom_boxplot(width=0.1, outlier_shape=\"\")\n     + labs(x=\"\", y=\"Flipper length (mm)\"))\np.show()",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html#which-one-should-i-use",
+    "href": "materials/distributions.html#which-one-should-i-use",
+    "title": "2  Distributions",
+    "section": "2.6 Which one should I use?",
+    "text": "2.6 Which one should I use?\n\n\n\nFour ways of showing the same penguin flipper lengths.\n\n\n\n\n\n\n\n\n\nSituation\nGood choice\n\n\n\n\nSmall samples (up to roughly 30 per group)\nEvery point, perhaps with a median line\n\n\nMedium samples, several groups\nBox plot with points\n\n\nLarge samples\nViolin or box plot\n\n\nOne or two groups, shape matters\nHistogram or density plot",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html#show-the-data-not-just-the-mean-extension",
+    "href": "materials/distributions.html#show-the-data-not-just-the-mean-extension",
+    "title": "2  Distributions",
+    "section": "2.7 Show the data, not just the mean Extension",
+    "text": "2.7 Show the data, not just the mean Extension\nIf you need to show a mean and an uncertainty interval, show it on top of the data rather than instead of it. stat_summary() calculates the summary for you.\n\nRPython\n\n\n\nggplot(finches, aes(x = group, y = bdepth)) +\n  geom_jitter(width = 0.15, alpha = 0.4, colour = \"grey50\") +\n  stat_summary(fun.data = mean_cl_normal, colour = \"#D6083B\", size = 0.8) +\n  labs(x = NULL, y = \"Beak depth (mm)\",\n       caption = \"Red points: mean with 95% confidence interval\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(finches, aes(x=\"group\", y=\"bdepth\"))\n     + geom_jitter(width=0.15, alpha=0.4, color=\"grey\")\n     + stat_summary(fun_data=\"mean_cl_normal\", color=\"#D6083B\", size=0.8)\n     + labs(x=\"\", y=\"Beak depth (mm)\",\n            caption=\"Red points: mean with 95% confidence interval\"))\np.show()",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html#exercises",
+    "href": "materials/distributions.html#exercises",
+    "title": "2  Distributions",
+    "section": "2.8 Exercises",
+    "text": "2.8 Exercises\n\n\n\n\n\n\nExerciseBin widths\n\n\n\n\n\n\n\nLevel: \nMake a histogram of penguin body mass (body_mass_g). Try bin widths of 50, 200 and 1000 grams. Which shows the shape best, and why?\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nggplot(penguins, aes(x = body_mass_g)) +\n  geom_histogram(binwidth = 200, fill = \"grey60\", colour = \"white\") +\n  labs(x = \"Body mass (g)\", y = \"Number of penguins\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"body_mass_g\"))\n     + geom_histogram(binwidth=200, fill=\"grey\", color=\"white\")\n     + labs(x=\"Body mass (g)\", y=\"Number of penguins\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nAt 50 g the histogram is noisy, and at 1000 g almost everything is in three bars. Around 200 g shows a clear shape, with a hint of two peaks: a clue that there are groups in the data (the species).\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseCompare species\n\n\n\n\n\n\n\nLevel: \nCompare body mass between the three penguin species using a box plot with jittered points. Colour the points by sex. What do you notice?\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\npenguins |&gt;\n  drop_na(sex) |&gt;\n  ggplot(aes(x = species, y = body_mass_g)) +\n  geom_boxplot(outlier.shape = NA, width = 0.5) +\n  geom_jitter(aes(colour = sex), width = 0.15, alpha = 0.7) +\n  labs(x = NULL, y = \"Body mass (g)\", colour = \"Sex\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins.dropna(subset=[\"sex\"]), aes(x=\"species\", y=\"body_mass_g\"))\n     + geom_boxplot(outlier_shape=\"\", width=0.5)\n     + geom_jitter(aes(color=\"sex\"), width=0.15, alpha=0.7)\n     + labs(x=\"\", y=\"Body mass (g)\", color=\"Sex\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nGentoo penguins are much heavier than the other two species. Within each species, males tend to be heavier than females, which is why some boxes look wide.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseRemake a dynamite plot Extension\n\n\n\n\n\n\n\nLevel: \nThe code below makes a bar chart of mean flipper length with standard error bars. Remake it so that it shows every observation as well as the mean.\npenguins |&gt;\n  group_by(species) |&gt;\n  summarise(mean = mean(flipper_length_mm, na.rm = TRUE),\n            se = sd(flipper_length_mm, na.rm = TRUE) / sqrt(n())) |&gt;\n  ggplot(aes(x = species, y = mean)) +\n  geom_col() +\n  geom_errorbar(aes(ymin = mean - se, ymax = mean + se), width = 0.2)\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nggplot(penguins, aes(x = species, y = flipper_length_mm)) +\n  geom_jitter(width = 0.15, alpha = 0.3) +\n  stat_summary(fun.data = mean_se, colour = \"#D6083B\", size = 0.6) +\n  labs(x = NULL, y = \"Flipper length (mm)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"species\", y=\"flipper_length_mm\"))\n     + geom_jitter(width=0.15, alpha=0.3)\n     + stat_summary(fun_data=\"mean_se\", color=\"#D6083B\", size=0.6)\n     + labs(x=\"\", y=\"Flipper length (mm)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nThe new version shows the same means, plus the spread, the sample size and any unusual values. Notice that the y axis no longer needs to start at zero, because we are reading positions, not bar lengths.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/distributions.html#summary",
+    "href": "materials/distributions.html#summary",
+    "title": "2  Distributions",
+    "section": "2.9 Summary",
+    "text": "2.9 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nMeans and error bars can hide skew, clusters and outliers. Show the data where you can.\nHistograms need a deliberate bin width.\nBox plots summarise; adding points shows what is underneath.\nChoose the plot by sample size and number of groups.\n\n\n\n\n\n\n\nWeissgerber, Tracey L., Natasa M. Milic, Stacey J. Winham, and Vesna D. Garovic. 2015. “Beyond Bar and Line Graphs: Time for a New Data Presentation Paradigm.” PLOS Biology 13 (4): e1002128. https://doi.org/10.1371/journal.pbio.1002128.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Distributions</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html",
+    "href": "materials/relationships.html",
+    "title": "3  Relationships",
+    "section": "",
+    "text": "3.1 Load packages and data\nWe use the Gapminder data for 2010: one row per country.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html#load-packages-and-data",
+    "href": "materials/relationships.html#load-packages-and-data",
+    "title": "3  Relationships",
+    "section": "",
+    "text": "RPython\n\n\n\nlibrary(tidyverse)\n\ngapminder &lt;- read_csv(\"data/gapminder_2010.csv\")\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\ngapminder = pd.read_csv(\"data/gapminder_2010.csv\")",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html#the-scatter-plot-core",
+    "href": "materials/relationships.html#the-scatter-plot-core",
+    "title": "3  Relationships",
+    "section": "3.2 The scatter plot Core",
+    "text": "3.2 The scatter plot Core\nA scatter plot puts one variable on each axis and draws one point per observation. It is the default choice when you ask “does one thing go with another?”\n\nRPython\n\n\n\nggplot(gapminder, aes(x = income_per_person, y = life_expectancy)) +\n  geom_point()\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\"))\n     + geom_point())\np.show()\n\n\n\n\n\n\n\n\n\n\n\nMost countries are squashed into the left of the plot, because a few very rich countries stretch the x axis. Income is a classic skewed variable.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html#log-scales-for-skewed-data-core",
+    "href": "materials/relationships.html#log-scales-for-skewed-data-core",
+    "title": "3  Relationships",
+    "section": "3.3 Log scales for skewed data Core",
+    "text": "3.3 Log scales for skewed data Core\nOn a log scale, each step along the axis is a multiplication rather than an addition: 1,000 to 10,000 to 100,000. This spreads out the crowded low values.\n\nRPython\n\n\n\nggplot(gapminder, aes(x = income_per_person, y = life_expectancy)) +\n  geom_point() +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\"))\n     + geom_point()\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nThe relationship now looks close to a straight line: each doubling of income is associated with a similar gain in life expectancy.\n\n\n\n\n\n\nImportantDesign principle: say when an axis is on a log scale\n\n\n\nMany readers assume a linear axis. Write “log scale” in the axis label, and use readable tick labels such as $1,000 rather than 3.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html#overplotting-core",
+    "href": "materials/relationships.html#overplotting-core",
+    "title": "3  Relationships",
+    "section": "3.4 Overplotting Core",
+    "text": "3.4 Overplotting Core\nWhen points overlap, dense areas look the same as sparse ones. Transparency (alpha) helps: overlapping points build up darker areas.\n\nRPython\n\n\n\nggplot(gapminder, aes(x = income_per_person, y = life_expectancy)) +\n  geom_point(size = 2.5, alpha = 0.4, colour = \"#003E72\") +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\"))\n     + geom_point(size=2.5, alpha=0.4, color=\"#003E72\")\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWith thousands of points, consider geom_bin_2d() or geom_hex(), which count points in small tiles, or a density contour.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html#trend-lines-core",
+    "href": "materials/relationships.html#trend-lines-core",
+    "title": "3  Relationships",
+    "section": "3.5 Trend lines Core",
+    "text": "3.5 Trend lines Core\ngeom_smooth() adds a fitted line. method = \"lm\" fits a straight line; the default in R is a flexible curve (loess), which is useful for spotting non-linear patterns. The grey band is a confidence interval for the fitted line.\n\nRPython\n\n\n\nggplot(gapminder, aes(x = income_per_person, y = life_expectancy)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"lm\", colour = \"#D6083B\") +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\"))\n     + geom_point(alpha=0.4)\n     + geom_smooth(method=\"lm\", color=\"#D6083B\")\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nA trend line is a model. Only add one if it helps the message, and say what kind of line it is in the legend or caption. This course is about showing relationships; to calculate and test them, see Core statistics 3: correlations.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html#adding-a-third-variable-core",
+    "href": "materials/relationships.html#adding-a-third-variable-core",
+    "title": "3  Relationships",
+    "section": "3.6 Adding a third variable Core",
+    "text": "3.6 Adding a third variable Core\nColour is the most common way to add a grouping variable. With six regions, though, the plot quickly becomes hard to read: six colours to tell apart and a legend to decode.\n\nRPython\n\n\n\nggplot(gapminder, aes(x = income_per_person, y = life_expectancy, colour = region)) +\n  geom_point(size = 2) +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\", colour = NULL)\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\", color=\"region\"))\n     + geom_point(size=2)\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\", color=\"\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nTwo better options, depending on the message:\n\nHighlight one group and make the rest grey. This is covered in Colour with purpose.\nSplit into small multiples, one panel per group, using facet_wrap().\n\n\nRPython\n\n\n\nggplot(gapminder, aes(x = income_per_person, y = life_expectancy)) +\n  geom_point(data = select(gapminder, -region), colour = \"grey85\", size = 1.2) +\n  geom_point(colour = \"#0072CF\", size = 1.5) +\n  facet_wrap(~ region) +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\nbackground = gapminder.drop(columns=\"region\")\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\"))\n     + geom_point(data=background, color=\"#D9D9D9\", size=1.2)\n     + geom_point(color=\"#0072CF\", size=1.5)\n     + facet_wrap(\"region\")\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\")\n     + theme(figure_size=(7, 5)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nThe trick here is the first layer. It uses a copy of the data with the region column removed, so facet_wrap() cannot split it, and every panel shows all the countries in light grey. Each region is then drawn on top in blue, compared against the whole world.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html#exercises",
+    "href": "materials/relationships.html#exercises",
+    "title": "3  Relationships",
+    "section": "3.7 Exercises",
+    "text": "3.7 Exercises\n\n\n\n\n\n\nExerciseChildren and child mortality\n\n\n\n\n\n\n\nLevel: \nPlot the number of children per woman (x) against child mortality (y). Is a log scale useful for either axis? Add a sensible title.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nggplot(gapminder, aes(x = children_per_woman, y = child_mortality)) +\n  geom_point(alpha = 0.6) +\n  scale_y_log10() +\n  labs(title = \"Where women have more children, more children die young\",\n       x = \"Children per woman\", y = \"Child deaths per 1,000 births (log scale)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"children_per_woman\", y=\"child_mortality\"))\n     + geom_point(alpha=0.6)\n     + scale_y_log10()\n     + labs(title=\"Where women have more children, more children die young\",\n            x=\"Children per woman\", y=\"Child deaths per 1,000 births (log scale)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nChild mortality is skewed, so a log scale on y spreads out the low values. Children per woman is not strongly skewed, so a linear axis is fine. Be careful with the headline: this is a correlation across countries, not evidence that one causes the other.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseSize as a channel\n\n\n\n\n\n\n\nLevel: \nMap population to point size in the income and life expectancy plot. What does it add? What problems does it introduce?\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nggplot(gapminder, aes(x = income_per_person, y = life_expectancy, size = population)) +\n  geom_point(alpha = 0.5, colour = \"#003E72\") +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  scale_size_area(max_size = 15, guide = \"none\") +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\", size=\"population\"))\n     + geom_point(alpha=0.5, color=\"#003E72\")\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + scale_size_area(max_size=15)\n     + guides(size=None)\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nSize shows which countries affect the most people. But area is a channel we read inaccurately, large bubbles hide small ones, and you need a legend to decode it. Use it for a rough impression, not for precise comparisons. scale_size_area() makes the bubble area, rather than its radius, proportional to the value, which is the honest choice.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/relationships.html#summary",
+    "href": "materials/relationships.html#summary",
+    "title": "3  Relationships",
+    "section": "3.8 Summary",
+    "text": "3.8 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nScatter plots are the default for relationships between two numeric variables.\nUse a log scale for skewed variables, and label it clearly.\nTransparency reduces overplotting.\nA trend line is a model: add it only when it supports the message.\nWith many groups, highlight one or use small multiples instead of many colours.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Relationships</span>"
+    ]
+  },
+  {
+    "objectID": "materials/change-over-time.html",
+    "href": "materials/change-over-time.html",
+    "title": "4  Change over time",
+    "section": "",
+    "text": "4.1 Load packages and data\nWe now use Gapminder data for every year from 1960 to 2010.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Change over time</span>"
+    ]
+  },
+  {
+    "objectID": "materials/change-over-time.html#load-packages-and-data",
+    "href": "materials/change-over-time.html#load-packages-and-data",
+    "title": "4  Change over time",
+    "section": "",
+    "text": "RPython\n\n\n\nlibrary(tidyverse)\n\ngap_years &lt;- read_csv(\"data/gapminder_1960_2010.csv\")\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\ngap_years = pd.read_csv(\"data/gapminder_1960_2010.csv\")",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Change over time</span>"
+    ]
+  },
+  {
+    "objectID": "materials/change-over-time.html#one-line-core",
+    "href": "materials/change-over-time.html#one-line-core",
+    "title": "4  Change over time",
+    "section": "4.2 One line Core",
+    "text": "4.2 One line Core\nLines connect observations in order, which suits anything measured along an ordered scale such as time. Let’s look at a single country.\n\nRPython\n\n\n\ngap_years |&gt;\n  filter(country == \"Rwanda\") |&gt;\n  ggplot(aes(x = year, y = life_expectancy)) +\n  geom_line(linewidth = 1, colour = \"#003E72\") +\n  labs(x = NULL, y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\nrwanda = gap_years[gap_years[\"country\"] == \"Rwanda\"]\n\np = (ggplot(rwanda, aes(x=\"year\", y=\"life_expectancy\"))\n     + geom_line(size=1, color=\"#003E72\")\n     + labs(x=\"\", y=\"Life expectancy (years)\")\n     + theme(figure_size=(7, 3.5)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nThe sharp fall in the early 1990s is the 1994 genocide. A line chart makes events like this obvious in a way a table never could.\n\n\n\n\n\n\nNoteDo I need an x axis label?\n\n\n\nWhen the axis shows years, the label “year” adds nothing, so we removed it with x = NULL (R) or x=\"\" (Python). Remove labels that only repeat what the tick marks already say.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Change over time</span>"
+    ]
+  },
+  {
+    "objectID": "materials/change-over-time.html#several-lines-core",
+    "href": "materials/change-over-time.html#several-lines-core",
+    "title": "4  Change over time",
+    "section": "4.3 Several lines Core",
+    "text": "4.3 Several lines Core\nTo draw one line per country, map country to group. Without it, the software would join all the points into one zigzag.\n\nRPython\n\n\n\ncountries &lt;- c(\"Rwanda\", \"Brazil\", \"India\", \"United Kingdom\")\n\ngap_years |&gt;\n  filter(country %in% countries) |&gt;\n  ggplot(aes(x = year, y = life_expectancy, colour = country)) +\n  geom_line(linewidth = 1) +\n  labs(x = NULL, y = \"Life expectancy (years)\", colour = NULL)\n\n\n\n\n\n\n\n\n\n\n\ncountries = [\"Rwanda\", \"Brazil\", \"India\", \"United Kingdom\"]\nfour = gap_years[gap_years[\"country\"].isin(countries)]\n\np = (ggplot(four, aes(x=\"year\", y=\"life_expectancy\", color=\"country\"))\n     + geom_line(size=1)\n     + labs(x=\"\", y=\"Life expectancy (years)\", color=\"\")\n     + theme(figure_size=(7, 3.8)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nMapping colour also sets the groups, so here we did not need group separately.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Change over time</span>"
+    ]
+  },
+  {
+    "objectID": "materials/change-over-time.html#too-many-lines-core",
+    "href": "materials/change-over-time.html#too-many-lines-core",
+    "title": "4  Change over time",
+    "section": "4.4 Too many lines Core",
+    "text": "4.4 Too many lines Core\nWith every country, the plot turns into spaghetti.\n\nRPython\n\n\n\nggplot(gap_years, aes(x = year, y = life_expectancy, group = country)) +\n  geom_line(alpha = 0.3) +\n  labs(x = NULL, y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gap_years, aes(x=\"year\", y=\"life_expectancy\", group=\"country\"))\n     + geom_line(alpha=0.3)\n     + labs(x=\"\", y=\"Life expectancy (years)\")\n     + theme(figure_size=(7, 3.8)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWe can see the overall trend upwards and a few dramatic dips, but we cannot follow any single country. There are three good ways out.\n\n4.4.1 Option 1: highlight a few\nDraw everything in light grey for context, then draw the lines you care about on top.\n\nRPython\n\n\n\nfocus &lt;- gap_years |&gt; filter(country %in% c(\"Rwanda\", \"Cambodia\"))\n\nggplot(gap_years, aes(x = year, y = life_expectancy, group = country)) +\n  geom_line(colour = \"grey85\") +\n  geom_line(data = focus, aes(colour = country), linewidth = 1.2) +\n  scale_colour_manual(values = c(Cambodia = \"#EA7125\", Rwanda = \"#D6083B\")) +\n  labs(x = NULL, y = \"Life expectancy (years)\", colour = NULL)\n\n\n\n\n\n\n\n\n\n\n\nfocus = gap_years[gap_years[\"country\"].isin([\"Rwanda\", \"Cambodia\"])]\n\np = (ggplot(gap_years, aes(x=\"year\", y=\"life_expectancy\", group=\"country\"))\n     + geom_line(color=\"#D9D9D9\")\n     + geom_line(data=focus, mapping=aes(color=\"country\"), size=1.2)\n     + scale_color_manual(values={\"Cambodia\": \"#EA7125\", \"Rwanda\": \"#D6083B\"})\n     + labs(x=\"\", y=\"Life expectancy (years)\", color=\"\")\n     + theme(figure_size=(7, 3.8)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n4.4.2 Option 2: small multiples\nSplit the data into one panel per region with facet_wrap(). All panels share the same axes, so they can be compared at a glance.\n\nRPython\n\n\n\nggplot(gap_years, aes(x = year, y = life_expectancy, group = country)) +\n  geom_line(alpha = 0.4, colour = \"#0072CF\") +\n  facet_wrap(~ region) +\n  scale_x_continuous(breaks = c(1960, 1985, 2010)) +\n  labs(x = NULL, y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gap_years, aes(x=\"year\", y=\"life_expectancy\", group=\"country\"))\n     + geom_line(alpha=0.4, color=\"#0072CF\")\n     + facet_wrap(\"region\")\n     + scale_x_continuous(breaks=[1960, 1985, 2010])\n     + labs(x=\"\", y=\"Life expectancy (years)\")\n     + theme(figure_size=(7, 5)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n4.4.3 Option 3: summarise\nSometimes the message is about groups, not individual countries. Calculate a summary per group and year, then plot a few lines.\n\nRPython\n\n\n\nregion_means &lt;- gap_years |&gt;\n  group_by(region, year) |&gt;\n  summarise(life_expectancy = mean(life_expectancy, na.rm = TRUE), .groups = \"drop\")\n\nggplot(region_means, aes(x = year, y = life_expectancy, colour = region)) +\n  geom_line(linewidth = 1.1) +\n  labs(x = NULL, y = \"Mean life expectancy (years)\", colour = NULL)\n\n\n\n\n\n\n\n\n\n\n\nregion_means = (gap_years\n                .groupby([\"region\", \"year\"], as_index=False)[\"life_expectancy\"]\n                .mean())\n\np = (ggplot(region_means, aes(x=\"year\", y=\"life_expectancy\", color=\"region\"))\n     + geom_line(size=1.1)\n     + labs(x=\"\", y=\"Mean life expectancy (years)\", color=\"\")\n     + theme(figure_size=(7, 3.8)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nThis is far easier to read, but remember what the summary hides: the spread between countries and events like the ones in Rwanda and Cambodia. Six lines with a legend is still hard work. In Labels, titles and annotation we replace the legend with labels at the end of each line.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Change over time</span>"
+    ]
+  },
+  {
+    "objectID": "materials/change-over-time.html#exercises",
+    "href": "materials/change-over-time.html#exercises",
+    "title": "4  Change over time",
+    "section": "4.5 Exercises",
+    "text": "4.5 Exercises\n\n\n\n\n\n\nExerciseIncome over time\n\n\n\n\n\n\n\nLevel: \nPlot income per person over time for China, India and the United States. Use a log scale on the y axis. Why does a log scale make sense for growth?\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\ngap_years |&gt;\n  filter(country %in% c(\"China\", \"India\", \"United States\")) |&gt;\n  ggplot(aes(x = year, y = income_per_person, colour = country)) +\n  geom_line(linewidth = 1) +\n  scale_y_log10(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = NULL, y = \"Income per person (log scale)\", colour = NULL)\n\n\n\n\n\n\n\n\n\n\n\nthree = gap_years[gap_years[\"country\"].isin([\"China\", \"India\", \"United States\"])]\n\np = (ggplot(three, aes(x=\"year\", y=\"income_per_person\", color=\"country\"))\n     + geom_line(size=1)\n     + scale_y_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"\", y=\"Income per person (log scale)\", color=\"\")\n     + theme(figure_size=(7, 3.8)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nOn a log scale, a constant growth rate appears as a straight line, and the slope shows how fast an economy grows, whatever its starting size. China’s steep slope after 1980 stands out, even though the United States is far richer throughout.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseHighlight in context\n\n\n\n\n\n\n\nLevel: \nPick one region. Draw every country in the world in light grey, and the countries in your chosen region in a strong colour on top. Write a headline title.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nsouth_asia &lt;- gap_years |&gt; filter(region == \"South Asia\")\n\nggplot(gap_years, aes(x = year, y = life_expectancy, group = country)) +\n  geom_line(colour = \"grey85\") +\n  geom_line(data = south_asia, colour = \"#55A51C\", linewidth = 0.9) +\n  labs(title = \"South Asia has closed much of the gap since 1960\",\n       x = NULL, y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\nsouth_asia = gap_years[gap_years[\"region\"] == \"South Asia\"]\n\np = (ggplot(gap_years, aes(x=\"year\", y=\"life_expectancy\", group=\"country\"))\n     + geom_line(color=\"#D9D9D9\")\n     + geom_line(data=south_asia, color=\"#55A51C\", size=0.9)\n     + labs(title=\"South Asia has closed much of the gap since 1960\",\n            x=\"\", y=\"Life expectancy (years)\")\n     + theme(figure_size=(7, 3.8)))\np.show()",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Change over time</span>"
+    ]
+  },
+  {
+    "objectID": "materials/change-over-time.html#summary",
+    "href": "materials/change-over-time.html#summary",
+    "title": "4  Change over time",
+    "section": "4.6 Summary",
+    "text": "4.6 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nUse lines for values measured along an ordered scale such as time.\nMap a variable to group (or colour) to draw one line per unit.\nAvoid spaghetti: highlight a few lines, use small multiples, or summarise.\nLog scales show growth rates as straight lines.",
+    "crumbs": [
+      "**Explore your data**",
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Change over time</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html",
+    "href": "materials/ranking.html",
+    "title": "5  Ranking and ordering",
+    "section": "",
+    "text": "5.1 Load packages and data",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html#load-packages-and-data",
+    "href": "materials/ranking.html#load-packages-and-data",
+    "title": "5  Ranking and ordering",
+    "section": "",
+    "text": "RPython\n\n\n\nlibrary(tidyverse)\n\ngapminder &lt;- read_csv(\"data/gapminder_2010.csv\")\npenguins &lt;- read_csv(\"data/penguins.csv\")\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\ngapminder = pd.read_csv(\"data/gapminder_2010.csv\")\npenguins = pd.read_csv(\"data/penguins.csv\")",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html#counts-and-values-core",
+    "href": "materials/ranking.html#counts-and-values-core",
+    "title": "5  Ranking and ordering",
+    "section": "5.2 Counts and values Core",
+    "text": "5.2 Counts and values Core\nThere are two kinds of bar chart:\n\ngeom_bar() counts rows for you. Use it when each row is one observation.\ngeom_col() draws a value you already have. Use it when you have calculated a number per category.\n\n\nRPython\n\n\n\nggplot(penguins, aes(x = island)) +\n  geom_bar() +\n  labs(x = NULL, y = \"Number of penguins\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(penguins, aes(x=\"island\"))\n     + geom_bar()\n     + labs(x=\"\", y=\"Number of penguins\")\n     + theme(figure_size=(7, 3.5)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nNow some values per category: mean life expectancy in each region.\n\nRPython\n\n\n\nregion_le &lt;- gapminder |&gt;\n  group_by(region) |&gt;\n  summarise(life_expectancy = mean(life_expectancy))\n\nregion_le\n\n# A tibble: 6 × 2\n  region                     life_expectancy\n  &lt;chr&gt;                                &lt;dbl&gt;\n1 Americas                              74.0\n2 East Asia & Pacific                   70.9\n3 Europe & Central Asia                 76.5\n4 Middle East & North Africa            74.2\n5 South Asia                            69.4\n6 Sub-Saharan Africa                    60.0\n\n\n\n\n\nregion_le = (gapminder\n             .groupby(\"region\", as_index=False)[\"life_expectancy\"]\n             .mean())\nregion_le\n\n\n\n\n\n\n\n\nregion\nlife_expectancy\n\n\n\n\n0\nAmericas\n73.974848\n\n\n1\nEast Asia & Pacific\n70.872174\n\n\n2\nEurope & Central Asia\n76.462500\n\n\n3\nMiddle East & North Africa\n74.241667\n\n\n4\nSouth Asia\n69.377500\n\n\n5\nSub-Saharan Africa\n60.034324",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html#sort-by-value-core",
+    "href": "materials/ranking.html#sort-by-value-core",
+    "title": "5  Ranking and ordering",
+    "section": "5.3 Sort by value Core",
+    "text": "5.3 Sort by value Core\nBy default, categories appear in alphabetical order, which is almost never what the reader needs. Sorting by value turns a lookup table into a ranking.\n\nRPython\n\n\nIn R, fct_reorder() reorders a categorical variable by another variable.\n\nggplot(region_le, aes(x = life_expectancy, y = fct_reorder(region, life_expectancy))) +\n  geom_col() +\n  labs(x = \"Mean life expectancy (years)\", y = NULL)\n\n\n\n\n\n\n\n\nPutting the categories on the y axis gives horizontal bars, so long names have room.\n\n\nIn Python, set the order by turning the column into an ordered category. plotnine draws horizontal bars with coord_flip().\n\norder = region_le.sort_values(\"life_expectancy\")[\"region\"]\nregion_le[\"region\"] = pd.Categorical(region_le[\"region\"], categories=order)\n\np = (ggplot(region_le, aes(x=\"region\", y=\"life_expectancy\"))\n     + geom_col()\n     + coord_flip()\n     + labs(x=\"\", y=\"Mean life expectancy (years)\")\n     + theme(figure_size=(7, 3.5)))\np.show()\n\n\n\n\n\n\n\n\nNote that with coord_flip() the x and y labels refer to the original axes, before flipping.\n\n\n\n\n\n\n\n\n\nImportantDesign principle: order is information\n\n\n\nSort by the value unless the categories have a natural order of their own, such as age groups, months, or dose levels. Then keep the natural order.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html#dot-plots-and-lollipops-core",
+    "href": "materials/ranking.html#dot-plots-and-lollipops-core",
+    "title": "5  Ranking and ordering",
+    "section": "5.4 Dot plots and lollipops Core",
+    "text": "5.4 Dot plots and lollipops Core\nBars must start at zero, because we read their length. When all values are far from zero, or there are many categories, a dot plot uses less ink and lets the axis focus on the range that matters.\n\nRPython\n\n\n\nggplot(region_le, aes(x = life_expectancy, y = fct_reorder(region, life_expectancy))) +\n  geom_segment(aes(x = 55, xend = life_expectancy, yend = region), colour = \"grey70\") +\n  geom_point(size = 4, colour = \"#003E72\") +\n  labs(x = \"Mean life expectancy (years)\", y = NULL)\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(region_le, aes(x=\"region\", y=\"life_expectancy\"))\n     + geom_segment(aes(xend=\"region\", y=55, yend=\"life_expectancy\"), color=\"#B3B3B3\")\n     + geom_point(size=4, color=\"#003E72\")\n     + coord_flip()\n     + labs(x=\"\", y=\"Mean life expectancy (years)\")\n     + theme(figure_size=(7, 3.5)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nThis is a lollipop chart: a dot plot with a thin line to guide the eye. Because the stick starts at 55 rather than 0, the length of the stick means nothing on its own. That is fine for dots and lollipops, but not for bars.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html#top-and-bottom-extension",
+    "href": "materials/ranking.html#top-and-bottom-extension",
+    "title": "5  Ranking and ordering",
+    "section": "5.5 Top and bottom Extension",
+    "text": "5.5 Top and bottom Extension\nWith many categories, show only the ones that matter for the message, and say so in the title.\n\nRPython\n\n\n\ngapminder |&gt;\n  slice_max(child_mortality, n = 10) |&gt;\n  ggplot(aes(x = child_mortality, y = fct_reorder(country, child_mortality))) +\n  geom_col(fill = \"#D6083B\") +\n  labs(title = \"The ten countries with the highest child mortality in 2010\",\n       x = \"Deaths before age 5 per 1,000 births\", y = NULL)\n\n\n\n\n\n\n\n\n\n\n\ntop10 = gapminder.nlargest(10, \"child_mortality\").copy()\norder = top10.sort_values(\"child_mortality\")[\"country\"]\ntop10[\"country\"] = pd.Categorical(top10[\"country\"], categories=order)\n\np = (ggplot(top10, aes(x=\"country\", y=\"child_mortality\"))\n     + geom_col(fill=\"#D6083B\")\n     + coord_flip()\n     + labs(title=\"The ten countries with the highest child mortality in 2010\",\n            x=\"\", y=\"Deaths before age 5 per 1,000 births\")\n     + theme(figure_size=(7, 3.8)))\np.show()",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html#parts-of-a-whole-extension",
+    "href": "materials/ranking.html#parts-of-a-whole-extension",
+    "title": "5  Ranking and ordering",
+    "section": "5.6 Parts of a whole Extension",
+    "text": "5.6 Parts of a whole Extension\nPie charts encode values as angles and areas, which we compare poorly. For shares, a single stacked bar or a set of sorted bars is usually clearer. Here is the share of countries in each income group, by region.\n\nRPython\n\n\n\ngapminder |&gt;\n  mutate(income_groups = fct_relevel(income_groups, \"low_income\", \"lower_middle_income\",\n                                     \"upper_middle_income\", \"high_income\")) |&gt;\n  ggplot(aes(y = region, fill = income_groups)) +\n  geom_bar(position = \"fill\") +\n  scale_x_continuous(labels = scales::label_percent()) +\n  scale_fill_brewer(palette = \"Blues\",\n                    labels = c(\"Low\", \"Lower middle\", \"Upper middle\", \"High\")) +\n  labs(x = \"Share of countries\", y = NULL, fill = \"Income group\")\n\n\n\n\n\n\n\n\n\n\n\nlevels = [\"low_income\", \"lower_middle_income\", \"upper_middle_income\", \"high_income\"]\ngapminder[\"income_groups\"] = pd.Categorical(gapminder[\"income_groups\"], categories=levels)\n\np = (ggplot(gapminder, aes(x=\"region\", fill=\"income_groups\"))\n     + geom_bar(position=\"fill\")\n     + coord_flip()\n     + scale_y_continuous(labels=lambda breaks: [f\"{b:.0%}\" for b in breaks])\n     + scale_fill_brewer(palette=\"Blues\",\n                         labels=[\"Low\", \"Lower middle\", \"Upper middle\", \"High\"])\n     + labs(x=\"\", y=\"Share of countries\", fill=\"Income group\")\n     + theme(figure_size=(7, 3.8)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nIncome groups have a natural order, so we set it explicitly and used a sequential palette (light to dark) to match. See Colour with purpose.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html#exercises",
+    "href": "materials/ranking.html#exercises",
+    "title": "5  Ranking and ordering",
+    "section": "5.7 Exercises",
+    "text": "5.7 Exercises\n\n\n\n\n\n\nExerciseRanked income\n\n\n\n\n\n\n\nLevel: \nMake a horizontal bar chart of median income per person by region, sorted from highest to lowest.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\ngapminder |&gt;\n  group_by(region) |&gt;\n  summarise(income = median(income_per_person)) |&gt;\n  ggplot(aes(x = income, y = fct_reorder(region, income))) +\n  geom_col(fill = \"#0072CF\") +\n  scale_x_continuous(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = \"Median income per person\", y = NULL)\n\n\n\n\n\n\n\n\n\n\n\nincome = gapminder.groupby(\"region\", as_index=False)[\"income_per_person\"].median()\norder = income.sort_values(\"income_per_person\")[\"region\"]\nincome[\"region\"] = pd.Categorical(income[\"region\"], categories=order)\n\np = (ggplot(income, aes(x=\"region\", y=\"income_per_person\"))\n     + geom_col(fill=\"#0072CF\")\n     + coord_flip()\n     + scale_y_continuous(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"\", y=\"Median income per person\")\n     + theme(figure_size=(7, 3.5)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nIn R, sorting with fct_reorder() puts the largest value at the top of a horizontal bar chart, because the y axis counts upwards from the bottom.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseBars or dots?\n\n\n\n\n\n\n\nLevel: \nMake a dot plot of mean bill length per penguin species. Then make it as a bar chart. Which works better, and why?\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\npenguins |&gt;\n  group_by(species) |&gt;\n  summarise(bill = mean(bill_length_mm, na.rm = TRUE)) |&gt;\n  ggplot(aes(x = bill, y = fct_reorder(species, bill))) +\n  geom_point(size = 4) +\n  labs(x = \"Mean bill length (mm)\", y = NULL)\n\n\n\n\n\n\n\n\n\n\n\nbill = penguins.groupby(\"species\", as_index=False)[\"bill_length_mm\"].mean()\norder = bill.sort_values(\"bill_length_mm\")[\"species\"]\nbill[\"species\"] = pd.Categorical(bill[\"species\"], categories=order)\n\np = (ggplot(bill, aes(x=\"species\", y=\"bill_length_mm\"))\n     + geom_point(size=4)\n     + coord_flip()\n     + labs(x=\"\", y=\"Mean bill length (mm)\")\n     + theme(figure_size=(7, 3)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nAll three means are between 38 and 49 mm. As bars starting from zero, the bars look almost the same length. As dots, the axis can zoom to the range of the data and the differences are clear. Better still would be to show the full distribution, as in Distributions.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/ranking.html#summary",
+    "href": "materials/ranking.html#summary",
+    "title": "5  Ranking and ordering",
+    "section": "5.8 Summary",
+    "text": "5.8 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\ngeom_bar() counts rows; geom_col() draws values you have calculated.\nSort categories by value unless they have a natural order.\nHorizontal bars give long labels room.\nBars start at zero; dot plots and lollipops do not need to.\nPrefer sorted or stacked bars to pie charts for comparing shares.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Ranking and ordering</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html",
+    "href": "materials/colour.html",
+    "title": "6  Colour with purpose",
+    "section": "",
+    "text": "6.1 Three kinds of palette Core\nUsing the wrong kind misleads the reader. A qualitative palette on a numeric variable suggests categories that do not exist; a sequential palette on categories suggests an order that does not exist.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#three-kinds-of-palette-core",
+    "href": "materials/colour.html#three-kinds-of-palette-core",
+    "title": "6  Colour with purpose",
+    "section": "",
+    "text": "Palette\nData\nExamples\n\n\n\n\nSequential\nA quantity from low to high\nConcentration, count, income\n\n\nDiverging\nValues either side of a meaningful midpoint\nChange from baseline, correlation, temperature anomaly\n\n\nQualitative\nUnordered categories\nSpecies, treatment, region",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#load-packages-and-data",
+    "href": "materials/colour.html#load-packages-and-data",
+    "title": "6  Colour with purpose",
+    "section": "6.2 Load packages and data",
+    "text": "6.2 Load packages and data\n\nRPython\n\n\n\nlibrary(tidyverse)\n\ngapminder &lt;- read_csv(\"data/gapminder_2010.csv\")\npenguins &lt;- read_csv(\"data/penguins.csv\")\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\ngapminder = pd.read_csv(\"data/gapminder_2010.csv\")\npenguins = pd.read_csv(\"data/penguins.csv\")",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#qualitative-colours-you-choose-core",
+    "href": "materials/colour.html#qualitative-colours-you-choose-core",
+    "title": "6  Colour with purpose",
+    "section": "6.3 Qualitative colours you choose Core",
+    "text": "6.3 Qualitative colours you choose Core\nThe default colours are designed to be evenly spaced in hue, not to be easy to tell apart for everyone. The Okabe and Ito palette was designed to remain distinguishable for people with the common forms of colour vision deficiency (Okabe and Ito 2008). Set your own colours with scale_colour_manual().\n\nRPython\n\n\n\nokabe_ito &lt;- c(\"#E69F00\", \"#56B4E9\", \"#009E73\", \"#F0E442\",\n               \"#0072B2\", \"#D55E00\", \"#CC79A7\", \"#000000\")\n\nggplot(penguins, aes(x = bill_length_mm, y = flipper_length_mm, colour = species)) +\n  geom_point(size = 2, alpha = 0.8) +\n  scale_colour_manual(values = okabe_ito) +\n  labs(x = \"Bill length (mm)\", y = \"Flipper length (mm)\", colour = \"Species\")\n\n\n\n\n\n\n\n\n\n\n\nokabe_ito = [\"#E69F00\", \"#56B4E9\", \"#009E73\", \"#F0E442\",\n             \"#0072B2\", \"#D55E00\", \"#CC79A7\", \"#000000\"]\n\np = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"flipper_length_mm\", color=\"species\"))\n     + geom_point(size=2, alpha=0.8)\n     + scale_color_manual(values=okabe_ito)\n     + labs(x=\"Bill length (mm)\", y=\"Flipper length (mm)\", color=\"Species\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nTo give specific colours to specific groups, use a named vector (R) or dictionary (Python), for example c(Adelie = \"#E69F00\", ...). Then the colours stay the same in every figure, even if a group is missing from one of them.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#sequential-colours-and-viridis-core",
+    "href": "materials/colour.html#sequential-colours-and-viridis-core",
+    "title": "6  Colour with purpose",
+    "section": "6.4 Sequential colours and viridis Core",
+    "text": "6.4 Sequential colours and viridis Core\nFor a continuous variable, use a palette that changes evenly in lightness. The viridis family was designed for this: it is perceptually even, works in greyscale, and is readable with colour vision deficiency.\n\nRPython\n\n\n\nggplot(gapminder, aes(x = income_per_person, y = life_expectancy, colour = child_mortality)) +\n  geom_point(size = 2.5) +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  scale_colour_viridis_c(direction = -1) +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\",\n       colour = \"Child deaths\\nper 1,000\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\", color=\"child_mortality\"))\n     + geom_point(size=2.5)\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + scale_color_cmap(\"viridis_r\")\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\",\n            color=\"Child deaths\\nper 1,000\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWe reversed the palette so that darker means more child deaths, which matches how most people read darkness.\n\n6.4.1 Why not a rainbow?\nRainbow colour maps change lightness unevenly, so we see sharp boundaries where the data changes smoothly, and they fail for colour vision deficiency (Crameri et al. 2020). The two maps below show the same smooth surface.\n\n\n\nThe same volcano surface with a rainbow palette (left) and viridis (right).",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#diverging-colours-core",
+    "href": "materials/colour.html#diverging-colours-core",
+    "title": "6  Colour with purpose",
+    "section": "6.5 Diverging colours Core",
+    "text": "6.5 Diverging colours Core\nA diverging palette uses two hues meeting at a neutral midpoint. It is right when the midpoint means something, such as zero change or zero correlation. Here is a correlation matrix of the Gapminder variables.\n\nRPython\n\n\n\nvars &lt;- c(\"children_per_woman\", \"child_mortality\", \"life_expectancy\",\n          \"income_per_person\", \"population\")\n\ncor_long &lt;- cor(gapminder[vars]) |&gt;\n  as_tibble(rownames = \"var1\") |&gt;\n  pivot_longer(-var1, names_to = \"var2\", values_to = \"r\")\n\nggplot(cor_long, aes(x = var1, y = var2, fill = r)) +\n  geom_tile(colour = \"white\") +\n  geom_text(aes(label = round(r, 2)), size = 3.5) +\n  scale_fill_gradient2(low = \"#0072B2\", mid = \"white\", high = \"#D55E00\",\n                       midpoint = 0, limits = c(-1, 1)) +\n  labs(x = NULL, y = NULL, fill = \"Correlation\") +\n  theme(axis.text.x = element_text(angle = 30, hjust = 1))\n\n\n\n\n\n\n\n\n\n\n\nvars_ = [\"children_per_woman\", \"child_mortality\", \"life_expectancy\",\n         \"income_per_person\", \"population\"]\n\ncor_long = (gapminder[vars_].corr()\n            .reset_index(names=\"var1\")\n            .melt(id_vars=\"var1\", var_name=\"var2\", value_name=\"r\"))\ncor_long[\"label\"] = cor_long[\"r\"].round(2)\n\np = (ggplot(cor_long, aes(x=\"var1\", y=\"var2\", fill=\"r\"))\n     + geom_tile(color=\"white\")\n     + geom_text(aes(label=\"label\"), size=9)\n     + scale_fill_gradient2(low=\"#0072B2\", mid=\"white\", high=\"#D55E00\",\n                            midpoint=0, limits=(-1, 1))\n     + labs(x=\"\", y=\"\", fill=\"Correlation\")\n     + theme(axis_text_x=element_text(rotation=30, ha=\"right\"),\n             figure_size=(7, 4.6)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nSetting limits to -1 and 1 keeps white at exactly zero, so the colours are honest even if the strongest correlation is only 0.6.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#grey-first-then-highlight-core",
+    "href": "materials/colour.html#grey-first-then-highlight-core",
+    "title": "6  Colour with purpose",
+    "section": "6.6 Grey first, then highlight Core",
+    "text": "6.6 Grey first, then highlight Core\nThis is the most useful colour technique for explanatory figures. Make everything grey, then add one strong colour only where you want attention. Create a true or false column for the group of interest, and map colour to it.\n\nRPython\n\n\n\ngapminder |&gt;\n  mutate(focus = region == \"Sub-Saharan Africa\") |&gt;\n  arrange(focus) |&gt;\n  ggplot(aes(x = income_per_person, y = life_expectancy, colour = focus)) +\n  geom_point(size = 2.5) +\n  scale_colour_manual(values = c(\"grey75\", \"#D6083B\"), guide = \"none\") +\n  annotate(\"text\", x = 1000, y = 77, label = \"Sub-Saharan Africa\",\n           colour = \"#D6083B\", fontface = \"bold\", hjust = 0) +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\ngapminder[\"focus\"] = gapminder[\"region\"] == \"Sub-Saharan Africa\"\nordered = gapminder.sort_values(\"focus\")\n\np = (ggplot(ordered, aes(x=\"income_per_person\", y=\"life_expectancy\", color=\"focus\"))\n     + geom_point(size=2.5)\n     + scale_color_manual(values=[\"#BFBFBF\", \"#D6083B\"], guide=None)\n     + annotate(\"text\", x=1000, y=77, label=\"Sub-Saharan Africa\",\n                color=\"#D6083B\", fontweight=\"bold\", ha=\"left\")\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\")\n     + theme_minimal())\np.show()\n\n\n\n\n\n\n\n\n\n\n\nTwo details make this work. Sorting by focus draws the highlighted points last, so they sit on top of the grey ones. And the label is written on the plot in the highlight colour, so there is no legend to decode.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#check-for-colour-vision-deficiency-extension",
+    "href": "materials/colour.html#check-for-colour-vision-deficiency-extension",
+    "title": "6  Colour with purpose",
+    "section": "6.7 Check for colour vision deficiency Extension",
+    "text": "6.7 Check for colour vision deficiency Extension\nAbout 1 in 12 men and 1 in 200 women have some form of colour vision deficiency, most often difficulty telling red from green. Check your figures with a simulator.\n\n\n\nRed, green and orange (left pair) become hard to separate with deuteranopia. The Okabe and Ito palette (right pair) stays distinct.\n\n\n\nRPython\n\n\nThe colorspace package can simulate how a set of colours looks with each type of colour vision deficiency.\n\nlibrary(colorspace)\n\nmy_colours &lt;- c(\"#D6083B\", \"#55A51C\", \"#EA7125\")\nswatchplot(\"Original\" = my_colours,\n           \"Deuteranopia\" = deutan(my_colours),\n           \"Protanopia\" = protan(my_colours))\n\n\n\n\n\n\n\n\n\n\nThere is no simulator built into plotnine. Save your figure and check it with a free online tool such as Coblis, or install the colorspacious package to simulate colours in code.\n\n\n\nThe simplest protection is not to rely on colour alone: add direct labels, or use shape as a second cue.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#exercises",
+    "href": "materials/colour.html#exercises",
+    "title": "6  Colour with purpose",
+    "section": "6.8 Exercises",
+    "text": "6.8 Exercises\n\n\n\n\n\n\nExerciseName your colours\n\n\n\n\n\n\n\nLevel: \nPlot penguin bill length against bill depth, coloured by species, using a named set of three colours of your choice from the Okabe and Ito palette.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nspecies_cols &lt;- c(Adelie = \"#E69F00\", Chinstrap = \"#CC79A7\", Gentoo = \"#009E73\")\n\nggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, colour = species)) +\n  geom_point(size = 2) +\n  scale_colour_manual(values = species_cols) +\n  labs(x = \"Bill length (mm)\", y = \"Bill depth (mm)\", colour = NULL)\n\n\n\n\n\n\n\n\n\n\n\nspecies_cols = {\"Adelie\": \"#E69F00\", \"Chinstrap\": \"#CC79A7\", \"Gentoo\": \"#009E73\"}\n\np = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\", color=\"species\"))\n     + geom_point(size=2)\n     + scale_color_manual(values=species_cols)\n     + labs(x=\"Bill length (mm)\", y=\"Bill depth (mm)\", color=\"\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseHighlight one species\n\n\n\n\n\n\n\nLevel: \nRemake the plot so that only Gentoo penguins are coloured, with the others in light grey. Label the group directly instead of using a legend, and write a headline.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\npenguins |&gt;\n  mutate(focus = species == \"Gentoo\") |&gt;\n  arrange(focus) |&gt;\n  ggplot(aes(x = bill_length_mm, y = bill_depth_mm, colour = focus)) +\n  geom_point(size = 2) +\n  scale_colour_manual(values = c(\"grey80\", \"#009E73\"), guide = \"none\") +\n  annotate(\"text\", x = 55, y = 14, label = \"Gentoo\", colour = \"#009E73\",\n           fontface = \"bold\", hjust = 1) +\n  labs(title = \"Gentoo penguins have long but shallow bills\",\n       x = \"Bill length (mm)\", y = \"Bill depth (mm)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\npenguins[\"focus\"] = penguins[\"species\"] == \"Gentoo\"\n\np = (ggplot(penguins.sort_values(\"focus\"),\n            aes(x=\"bill_length_mm\", y=\"bill_depth_mm\", color=\"focus\"))\n     + geom_point(size=2)\n     + scale_color_manual(values=[\"#CCCCCC\", \"#009E73\"], guide=None)\n     + annotate(\"text\", x=55, y=14, label=\"Gentoo\", color=\"#009E73\",\n                fontweight=\"bold\", ha=\"right\")\n     + labs(title=\"Gentoo penguins have long but shallow bills\",\n            x=\"Bill length (mm)\", y=\"Bill depth (mm)\")\n     + theme_minimal())\np.show()",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/colour.html#summary",
+    "href": "materials/colour.html#summary",
+    "title": "6  Colour with purpose",
+    "section": "6.9 Summary",
+    "text": "6.9 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nSequential palettes for amounts, diverging palettes around a meaningful midpoint, qualitative palettes for categories.\nAvoid rainbow colour maps; use viridis or similar.\nChoose colour-blind safe colours, and never rely on colour alone.\nGrey everything first, then highlight what matters.\n\n\n\n\n\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The Misuse of Colour in Science Communication.” Nature Communications 11: 5444. https://doi.org/10.1038/s41467-020-19160-7.\n\n\nOkabe, Masataka, and Kei Ito. 2008. Color Universal Design (CUD): How to Make Figures and Presentations That Are Friendly to Colorblind People. https://jfly.uni-koeln.de/color/.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Colour with purpose</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html",
+    "href": "materials/labels-and-annotation.html",
+    "title": "7  Labels, titles and annotation",
+    "section": "",
+    "text": "7.1 Load packages and data",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#load-packages-and-data",
+    "href": "materials/labels-and-annotation.html#load-packages-and-data",
+    "title": "7  Labels, titles and annotation",
+    "section": "",
+    "text": "RPython\n\n\n\nlibrary(tidyverse)\n\ngapminder &lt;- read_csv(\"data/gapminder_2010.csv\")\ngap_years &lt;- read_csv(\"data/gapminder_1960_2010.csv\")\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\ngapminder = pd.read_csv(\"data/gapminder_2010.csv\")\ngap_years = pd.read_csv(\"data/gapminder_1960_2010.csv\")",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#titles-that-say-something-core",
+    "href": "materials/labels-and-annotation.html#titles-that-say-something-core",
+    "title": "7  Labels, titles and annotation",
+    "section": "7.2 Titles that say something Core",
+    "text": "7.2 Titles that say something Core\nlabs() sets the title, subtitle, caption and axis labels in one place.\n\nTitle: the headline. What should the reader notice?\nSubtitle: what is measured, where and when.\nCaption: the source, and any notes on method.\nAxis labels: plain words with units, never raw variable names.\n\n\nRPython\n\n\n\nggplot(gapminder, aes(x = children_per_woman, y = life_expectancy)) +\n  geom_point(alpha = 0.6) +\n  labs(title = \"Where families are smaller, people live longer\",\n       subtitle = \"167 countries, 2010\",\n       caption = \"Source: Gapminder\",\n       x = \"Children per woman\",\n       y = \"Life expectancy (years)\")\n\n\n\n\n\n\n\n\n\n\n\np = (ggplot(gapminder, aes(x=\"children_per_woman\", y=\"life_expectancy\"))\n     + geom_point(alpha=0.6)\n     + labs(title=\"Where families are smaller, people live longer\",\n            subtitle=\"167 countries, 2010\",\n            caption=\"Source: Gapminder\",\n            x=\"Children per woman\",\n            y=\"Life expectancy (years)\")\n     + theme(figure_size=(7, 4.4)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nNoteTitles in papers\n\n\n\nJournals usually want the headline in the figure legend rather than on the figure. The principle is the same: the first sentence of the legend should state the message. For talks and posters, put the headline on the figure itself.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#direct-labels-instead-of-legends-core",
+    "href": "materials/labels-and-annotation.html#direct-labels-instead-of-legends-core",
+    "title": "7  Labels, titles and annotation",
+    "section": "7.3 Direct labels instead of legends Core",
+    "text": "7.3 Direct labels instead of legends Core\nFor line charts, labelling each line where it ends removes the need for a legend. The approach is the same in both languages: make a small table of the last point of each line, then draw text there.\n\nRPython\n\n\n\nregion_years &lt;- gap_years |&gt;\n  group_by(region, year) |&gt;\n  summarise(life_expectancy = mean(life_expectancy, na.rm = TRUE), .groups = \"drop\")\n\nline_ends &lt;- region_years |&gt; filter(year == max(year))\n\nggplot(region_years, aes(x = year, y = life_expectancy, colour = region)) +\n  geom_line(linewidth = 1.1) +\n  geom_text(data = line_ends, aes(label = region),\n            hjust = 0, nudge_x = 1.5, size = 3.6, fontface = \"bold\") +\n  scale_x_continuous(breaks = seq(1960, 2010, 10),\n                     expand = expansion(mult = c(0.02, 0.45))) +\n  labs(x = NULL, y = \"Mean life expectancy (years)\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\n\nregion_years = (gap_years\n                .groupby([\"region\", \"year\"], as_index=False)[\"life_expectancy\"]\n                .mean())\nline_ends = region_years[region_years[\"year\"] == region_years[\"year\"].max()]\n\np = (ggplot(region_years, aes(x=\"year\", y=\"life_expectancy\", color=\"region\"))\n     + geom_line(size=1.1)\n     + geom_text(line_ends, aes(label=\"region\"),\n                 ha=\"left\", nudge_x=1.5, size=10, fontweight=\"bold\")\n     + scale_x_continuous(breaks=range(1960, 2011, 10), limits=(1960, 2035))\n     + labs(x=\"\", y=\"Mean life expectancy (years)\")\n     + theme_minimal()\n     + theme(legend_position=\"none\", figure_size=(7, 4.4)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWe extended the x axis to make room for the labels. Some labels may overlap where lines end close together. You can nudge individual labels by hand, or in R use the ggrepel package (geom_text_repel()), which moves labels apart automatically.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#annotation-core",
+    "href": "materials/labels-and-annotation.html#annotation-core",
+    "title": "7  Labels, titles and annotation",
+    "section": "7.4 Annotation Core",
+    "text": "7.4 Annotation Core\nAnnotations explain why the data looks the way it does. annotate() adds a single piece of text, a line or a shape at a position you choose.\n\nRPython\n\n\n\nrwanda &lt;- gap_years |&gt; filter(country == \"Rwanda\")\n\nggplot(rwanda, aes(x = year, y = life_expectancy)) +\n  geom_line(linewidth = 1.1, colour = \"#003E72\") +\n  annotate(\"segment\", x = 1985, xend = 1993.5, y = 25, yend = 15,\n           colour = \"grey40\", arrow = arrow(length = unit(2, \"mm\"))) +\n  annotate(\"text\", x = 1984, y = 26, label = \"1994 genocide\", hjust = 1, colour = \"grey30\") +\n  labs(title = \"Rwanda: life expectancy collapsed in 1994 and then recovered\",\n       x = NULL, y = \"Life expectancy (years)\") +\n  theme_minimal()\n\n\n\n\n\n\n\n\n\n\n\nrwanda = gap_years[gap_years[\"country\"] == \"Rwanda\"]\n\np = (ggplot(rwanda, aes(x=\"year\", y=\"life_expectancy\"))\n     + geom_line(size=1.1, color=\"#003E72\")\n     + annotate(\"segment\", x=1985, xend=1993.5, y=25, yend=15,\n                color=\"#666666\", arrow=arrow(length=0.08))\n     + annotate(\"text\", x=1984, y=26, label=\"1994 genocide\", ha=\"right\", color=\"#4D4D4D\")\n     + labs(title=\"Rwanda: life expectancy collapsed in 1994 and then recovered\",\n            x=\"\", y=\"Life expectancy (years)\")\n     + theme_minimal()\n     + theme(figure_size=(7, 3.8)))\np.show()",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#themes-and-clutter-core",
+    "href": "materials/labels-and-annotation.html#themes-and-clutter-core",
+    "title": "7  Labels, titles and annotation",
+    "section": "7.5 Themes and clutter Core",
+    "text": "7.5 Themes and clutter Core\nEverything that is not data (grid lines, borders, backgrounds) should earn its place. Built-in themes such as theme_minimal() and theme_classic() are a good start. theme() controls individual elements; element_blank() removes one.\n\nRPython\n\n\n\nregion_le &lt;- gapminder |&gt;\n  group_by(region) |&gt;\n  summarise(life_expectancy = mean(life_expectancy))\n\nggplot(region_le, aes(x = life_expectancy, y = fct_reorder(region, life_expectancy))) +\n  geom_col(fill = \"grey70\") +\n  theme_minimal(base_size = 13) +\n  theme(panel.grid.major.y = element_blank(),\n        panel.grid.minor = element_blank()) +\n  labs(x = \"Mean life expectancy (years)\", y = NULL)\n\n\n\n\n\n\n\n\n\n\n\nregion_le = gapminder.groupby(\"region\", as_index=False)[\"life_expectancy\"].mean()\norder = region_le.sort_values(\"life_expectancy\")[\"region\"]\nregion_le[\"region\"] = pd.Categorical(region_le[\"region\"], categories=order)\n\np = (ggplot(region_le, aes(x=\"region\", y=\"life_expectancy\"))\n     + geom_col(fill=\"#B3B3B3\")\n     + coord_flip()\n     + theme_minimal(base_size=13)\n     + theme(panel_grid_major_y=element_blank(),\n             panel_grid_minor=element_blank(),\n             figure_size=(7, 3.6))\n     + labs(x=\"\", y=\"Mean life expectancy (years)\"))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nWith coord_flip() in Python, the grid lines we removed are the ones that run along the bars. Try changing panel_grid_major_y to panel_grid_major_x to see the difference.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#worked-example-the-full-makeover-core",
+    "href": "materials/labels-and-annotation.html#worked-example-the-full-makeover-core",
+    "title": "7  Labels, titles and annotation",
+    "section": "7.6 Worked example: the full makeover Core",
+    "text": "7.6 Worked example: the full makeover Core\nHere are all the techniques from this part of the course in one figure: sort, grey, highlight, label directly, and write a headline.\n\nRPython\n\n\n\nregion_le |&gt;\n  mutate(focus = region == \"Sub-Saharan Africa\") |&gt;\n  ggplot(aes(x = life_expectancy, y = fct_reorder(region, life_expectancy), fill = focus)) +\n  geom_col(width = 0.7) +\n  geom_text(aes(label = sprintf(\"%.1f\", life_expectancy)),\n            hjust = 1.2, colour = \"white\", fontface = \"bold\") +\n  scale_fill_manual(values = c(\"grey65\", \"#D6083B\"), guide = \"none\") +\n  scale_x_continuous(expand = expansion(mult = c(0, 0.02))) +\n  labs(title = \"Sub-Saharan Africa trails every other region by over 10 years\",\n       subtitle = \"Mean life expectancy at birth across countries, 2010\",\n       caption = \"Source: Gapminder\", x = NULL, y = NULL) +\n  theme_minimal(base_size = 13) +\n  theme(panel.grid = element_blank(), axis.text.x = element_blank(),\n        plot.title.position = \"plot\")\n\n\n\n\n\n\n\n\n\n\n\nregion_le[\"focus\"] = region_le[\"region\"] == \"Sub-Saharan Africa\"\nregion_le[\"label\"] = region_le[\"life_expectancy\"].map(\"{:.1f}\".format)\n\np = (ggplot(region_le, aes(x=\"region\", y=\"life_expectancy\", fill=\"focus\"))\n     + geom_col(width=0.7)\n     + geom_text(aes(label=\"label\"), ha=\"right\", nudge_y=-1,\n                 color=\"white\", fontweight=\"bold\")\n     + coord_flip()\n     + scale_fill_manual(values=[\"#A6A6A6\", \"#D6083B\"], guide=None)\n     + scale_y_continuous(expand=(0, 0))\n     + labs(title=\"Sub-Saharan Africa trails every other region by over 10 years\",\n            subtitle=\"Mean life expectancy at birth across countries, 2010\",\n            caption=\"Source: Gapminder\", x=\"\", y=\"\")\n     + theme_minimal(base_size=13)\n     + theme(panel_grid=element_blank(), axis_text_x=element_blank(),\n             plot_title=element_text(size=13, weight=\"bold\"),\n             figure_size=(7, 3.8)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\nBecause the values are written on the bars, the x axis is no longer needed, so we removed its text.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#your-own-theme-extension",
+    "href": "materials/labels-and-annotation.html#your-own-theme-extension",
+    "title": "7  Labels, titles and annotation",
+    "section": "7.7 Your own theme Extension",
+    "text": "7.7 Your own theme Extension\nIf you make many figures, for a thesis or a paper, define your theme once and reuse it. Every figure will then look consistent.\n\nRPython\n\n\n\ntheme_mine &lt;- function(base_size = 13) {\n  theme_minimal(base_size = base_size) +\n    theme(panel.grid.minor = element_blank(),\n          plot.title = element_text(face = \"bold\"),\n          plot.title.position = \"plot\",\n          legend.position = \"top\")\n}\n\n# then add + theme_mine() to any plot, or set it for the whole session:\ntheme_set(theme_mine())\n\n\n\n\ndef theme_mine(base_size=13):\n    return (theme_minimal(base_size=base_size)\n            + theme(panel_grid_minor=element_blank(),\n                    plot_title=element_text(weight=\"bold\"),\n                    legend_position=\"top\"))\n\n# then add + theme_mine() to any plot, or set it for the whole session:\ntheme_set(theme_mine())",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#exercises",
+    "href": "materials/labels-and-annotation.html#exercises",
+    "title": "7  Labels, titles and annotation",
+    "section": "7.8 Exercises",
+    "text": "7.8 Exercises\n\n\n\n\n\n\nExerciseWrite the labels\n\n\n\n\n\n\n\nLevel: \nTake any plot from an earlier chapter and give it a headline title, a subtitle, a caption with the source, and axis labels in plain words with units.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\nThere is no single right answer. Check your title by asking: does it tell the reader what to notice, or only what is plotted? “Income and life expectancy” is a label. “Richer countries live longer, but the gains shrink at the top” is a headline.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseLabel the lines\n\n\n\n\n\n\n\nLevel: \nPlot life expectancy over time for Brazil, India, Rwanda and the United Kingdom, with direct labels at the end of each line and no legend.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nfour &lt;- gap_years |&gt; filter(country %in% c(\"Brazil\", \"India\", \"Rwanda\", \"United Kingdom\"))\nends &lt;- four |&gt; filter(year == max(year))\n\nggplot(four, aes(x = year, y = life_expectancy, colour = country)) +\n  geom_line(linewidth = 1.1) +\n  geom_text(data = ends, aes(label = country), hjust = 0, nudge_x = 1, fontface = \"bold\") +\n  scale_x_continuous(expand = expansion(mult = c(0.02, 0.25))) +\n  labs(x = NULL, y = \"Life expectancy (years)\") +\n  theme_minimal() +\n  theme(legend.position = \"none\")\n\n\n\n\n\n\n\n\n\n\n\nfour = gap_years[gap_years[\"country\"].isin([\"Brazil\", \"India\", \"Rwanda\", \"United Kingdom\"])]\nends = four[four[\"year\"] == four[\"year\"].max()]\n\np = (ggplot(four, aes(x=\"year\", y=\"life_expectancy\", color=\"country\"))\n     + geom_line(size=1.1)\n     + geom_text(ends, aes(label=\"country\"), ha=\"left\", nudge_x=1, fontweight=\"bold\")\n     + scale_x_continuous(limits=(1960, 2025))\n     + labs(x=\"\", y=\"Life expectancy (years)\")\n     + theme_minimal()\n     + theme(legend_position=\"none\", figure_size=(7, 3.8)))\np.show()\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseAnnotate an event Extension\n\n\n\n\n\n\n\nLevel: \nFind another country with a sharp change in life expectancy (try Cambodia or Haiti). Plot it, and add an annotation that explains the event.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\nCambodia shows a severe fall in the late 1970s, during the Khmer Rouge regime. Haiti shows a sharp fall in 2010, the year of the earthquake. Use annotate(\"text\", ...) for the label and annotate(\"segment\", ...) with an arrow to point at the event, as in the Rwanda example.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/labels-and-annotation.html#summary",
+    "href": "materials/labels-and-annotation.html#summary",
+    "title": "7  Labels, titles and annotation",
+    "section": "7.9 Summary",
+    "text": "7.9 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nThe title is a headline; the subtitle says what is measured; the caption gives the source.\nUse plain-language axis labels with units.\nDirect labels are usually better than legends.\nAnnotations explain why the data looks the way it does.\nRemove non-data elements that do not help, and reuse a theme for consistency.",
+    "crumbs": [
+      "**Design for attention**",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Labels, titles and annotation</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html",
+    "href": "materials/scales-and-axes.html",
+    "title": "8  Honest scales and axes",
+    "section": "",
+    "text": "8.1 Load packages and data\nWe also load patchwork in R, which puts plots side by side with | and on top of each other with /. In Python, plotnine has the same operators built in. We cover this properly in Multi-panel figures and export.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html#load-packages-and-data",
+    "href": "materials/scales-and-axes.html#load-packages-and-data",
+    "title": "8  Honest scales and axes",
+    "section": "",
+    "text": "RPython\n\n\n\nlibrary(tidyverse)\nlibrary(patchwork)\n\ngapminder &lt;- read_csv(\"data/gapminder_2010.csv\")\ngap_years &lt;- read_csv(\"data/gapminder_1960_2010.csv\")\npenguins &lt;- read_csv(\"data/penguins.csv\")\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\ngapminder = pd.read_csv(\"data/gapminder_2010.csv\")\ngap_years = pd.read_csv(\"data/gapminder_1960_2010.csv\")\npenguins = pd.read_csv(\"data/penguins.csv\")",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html#when-must-an-axis-start-at-zero-core",
+    "href": "materials/scales-and-axes.html#when-must-an-axis-start-at-zero-core",
+    "title": "8  Honest scales and axes",
+    "section": "8.2 When must an axis start at zero? Core",
+    "text": "8.2 When must an axis start at zero? Core\nIt depends on the channel the reader uses.\n\nBars and areas are read by their length. A bar twice as long looks like twice the amount. If the axis does not start at zero, the lengths lie. Bars always start at zero.\nPoints and lines are read by their position. The axis can focus on the range where the data is, as long as it is clearly labelled.\n\nIn the figure above, the left panel makes a 3% difference look like a fivefold one. The middle panel is honest but makes the difference hard to see. The right panel uses dots, so it can zoom in honestly.\nggplot2 and plotnine start bar axes at zero by default. The danger usually comes from zooming in afterwards.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html#zooming-without-losing-data-core",
+    "href": "materials/scales-and-axes.html#zooming-without-losing-data-core",
+    "title": "8  Honest scales and axes",
+    "section": "8.3 Zooming without losing data Core",
+    "text": "8.3 Zooming without losing data Core\nThere are two ways to change the range of an axis, and they behave very differently.\n\nScale limits (scale_y_continuous(limits = ...) or ylim()) remove data outside the range before anything is calculated. Box plots, means and trend lines change.\nCoordinate limits (coord_cartesian(ylim = ...)) zoom the view, like a camera. All the data is still used.\n\n\nRPython\n\n\n\nbase &lt;- ggplot(penguins, aes(x = species, y = body_mass_g)) + geom_boxplot()\n\nremoved &lt;- base + scale_y_continuous(limits = c(3000, 5000)) + ggtitle(\"Scale limits: data removed\")\nzoomed &lt;- base + coord_cartesian(ylim = c(3000, 5000)) + ggtitle(\"Coordinate limits: zoomed\")\n\nremoved | zoomed\n\n\n\n\n\n\n\n\n\n\n\nbase = ggplot(penguins, aes(x=\"species\", y=\"body_mass_g\")) + geom_boxplot()\n\nremoved = base + scale_y_continuous(limits=(3000, 5000)) + ggtitle(\"Scale limits: data removed\")\nzoomed = base + coord_cartesian(ylim=(3000, 5000)) + ggtitle(\"Coordinate limits: zoomed\")\n\np = removed | zoomed\np.show()\n\n\n\n\n\nLook at the Gentoo box. On the left, every penguin heavier than 5,000 g was thrown away before the box was drawn, so the median is wrong. On the right, the box is correct and just cut off by the view. Use coord_cartesian() to zoom.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html#breaks-and-labels-core",
+    "href": "materials/scales-and-axes.html#breaks-and-labels-core",
+    "title": "8  Honest scales and axes",
+    "section": "8.4 Breaks and labels Core",
+    "text": "8.4 Breaks and labels Core\nTick labels should be readable without thinking: thousands separators, currency symbols and percentages where relevant.\n\nRPython\n\n\nThe scales package has a helper for every common format.\n\nggplot(gapminder, aes(x = income_per_person, y = child_mortality / 1000)) +\n  geom_point(alpha = 0.5) +\n  scale_x_log10(breaks = c(1000, 3000, 10000, 30000, 100000),\n                labels = scales::label_dollar(accuracy = 1)) +\n  scale_y_continuous(labels = scales::label_percent()) +\n  labs(x = \"Income per person (log scale)\", y = \"Children who die before age 5\")\n\n\n\n\n\n\n\n\n\n\nIn Python, a short function that turns numbers into text does the same job.\n\ngapminder[\"child_mortality_prop\"] = gapminder[\"child_mortality\"] / 1000\n\np = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"child_mortality_prop\"))\n     + geom_point(alpha=0.5)\n     + scale_x_log10(breaks=[1000, 3000, 10000, 30000, 100000],\n                     labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + scale_y_continuous(labels=lambda breaks: [f\"{b:.0%}\" for b in breaks])\n     + labs(x=\"Income per person (log scale)\", y=\"Children who die before age 5\")\n     + theme(figure_size=(7, 3.8)))\np.show()",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html#avoid-dual-axes-extension",
+    "href": "materials/scales-and-axes.html#avoid-dual-axes-extension",
+    "title": "8  Honest scales and axes",
+    "section": "8.5 Avoid dual axes Extension",
+    "text": "8.5 Avoid dual axes Extension\nA plot with two different y axes, one on each side, lets you make any two lines appear to cross, diverge or move together, simply by choosing the scales. The crossing point means nothing. Use two aligned panels instead, sharing the x axis.\n\nRPython\n\n\n\nbrazil &lt;- gap_years |&gt; filter(country == \"Brazil\")\n\np_income &lt;- ggplot(brazil, aes(x = year, y = income_per_person)) +\n  geom_line(linewidth = 1, colour = \"#0072CF\") +\n  scale_y_continuous(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = NULL, y = NULL, subtitle = \"Income per person\")\n\np_mortality &lt;- ggplot(brazil, aes(x = year, y = child_mortality)) +\n  geom_line(linewidth = 1, colour = \"#D6083B\") +\n  labs(x = NULL, y = NULL, subtitle = \"Child deaths per 1,000 births\")\n\np_income / p_mortality +\n  plot_annotation(title = \"Brazil: incomes rose while child mortality fell\")\n\n\n\n\n\n\n\n\n\n\n\nbrazil = gap_years[gap_years[\"country\"] == \"Brazil\"]\n\np_income = (ggplot(brazil, aes(x=\"year\", y=\"income_per_person\"))\n            + geom_line(size=1, color=\"#0072CF\")\n            + scale_y_continuous(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n            + labs(x=\"\", y=\"\", title=\"Income per person\"))\n\np_mortality = (ggplot(brazil, aes(x=\"year\", y=\"child_mortality\"))\n               + geom_line(size=1, color=\"#D6083B\")\n               + labs(x=\"\", y=\"\", title=\"Child deaths per 1,000 births\"))\n\np = p_income / p_mortality\np.show()\n\n\n\n\n\nEach panel has its own honest axis, and the shared time axis makes it easy to compare when things changed.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html#aspect-ratio-extension",
+    "href": "materials/scales-and-axes.html#aspect-ratio-extension",
+    "title": "8  Honest scales and axes",
+    "section": "8.6 Aspect ratio Extension",
+    "text": "8.6 Aspect ratio Extension\nStretching or squashing a plot changes how steep lines look. A flat, wide plot makes change look small; a tall, narrow one makes it look dramatic. A good starting point is to choose a shape where the most important lines are at roughly 45 degrees. Set the shape deliberately when you save the figure (see Multi-panel figures and export), rather than accepting whatever your screen gives you.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html#exercises",
+    "href": "materials/scales-and-axes.html#exercises",
+    "title": "8  Honest scales and axes",
+    "section": "8.7 Exercises",
+    "text": "8.7 Exercises\n\n\n\n\n\n\nExerciseSpot the trap\n\n\n\n\n\n\n\nLevel: \nA colleague shows you a bar chart of mean reaction time in two groups, 412 ms and 431 ms, with the y axis running from 400 to 440 ms. What would you suggest?\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\nThe bars exaggerate the difference: the second bar looks more than twice as long as the first, when the difference is under 5%. Either start the axis at zero, or (better) switch to points showing the individual observations and the means, which can be zoomed in honestly.\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseZoom correctly\n\n\n\n\n\n\n\nLevel: \nMake a scatter plot of penguin flipper length against body mass with a straight trend line. Zoom into body masses between 3,000 and 4,500 g, first with scale limits and then with coord_cartesian(). Does the trend line change?\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\nbase &lt;- ggplot(penguins, aes(x = body_mass_g, y = flipper_length_mm)) +\n  geom_point(alpha = 0.4) +\n  geom_smooth(method = \"lm\")\n\n(base + scale_x_continuous(limits = c(3000, 4500))) |\n  (base + coord_cartesian(xlim = c(3000, 4500)))\n\n\n\n\n\n\n\n\n\n\n\nbase = (ggplot(penguins, aes(x=\"body_mass_g\", y=\"flipper_length_mm\"))\n        + geom_point(alpha=0.4)\n        + geom_smooth(method=\"lm\"))\n\np = ((base + scale_x_continuous(limits=(3000, 4500)))\n     | (base + coord_cartesian(xlim=(3000, 4500))))\np.show()\n\n\n\n\n\nWith scale limits, the line is fitted only to penguins in the range, so it changes. With coord_cartesian(), the line is fitted to all the data and we just see part of it.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/scales-and-axes.html#summary",
+    "href": "materials/scales-and-axes.html#summary",
+    "title": "8  Honest scales and axes",
+    "section": "8.8 Summary",
+    "text": "8.8 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nBars start at zero; points and lines can zoom in, with clear labels.\nUse coord_cartesian() to zoom. Scale limits remove data.\nFormat tick labels for readers: separators, currency, percentages.\nAvoid dual y axes; use aligned panels.\nChoose the aspect ratio deliberately.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>Honest scales and axes</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html",
+    "href": "materials/multi-panel-and-export.html",
+    "title": "9  Multi-panel figures and export",
+    "section": "",
+    "text": "9.1 Load packages and data",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html#load-packages-and-data",
+    "href": "materials/multi-panel-and-export.html#load-packages-and-data",
+    "title": "9  Multi-panel figures and export",
+    "section": "",
+    "text": "RPython\n\n\n\nlibrary(tidyverse)\nlibrary(patchwork)\n\npenguins &lt;- read_csv(\"data/penguins.csv\")\nspecies_cols &lt;- c(Adelie = \"#E69F00\", Chinstrap = \"#CC79A7\", Gentoo = \"#009E73\")\n\n\n\n\nimport pandas as pd\nfrom plotnine import *\n\npenguins = pd.read_csv(\"data/penguins.csv\")\nspecies_cols = {\"Adelie\": \"#E69F00\", \"Chinstrap\": \"#CC79A7\", \"Gentoo\": \"#009E73\"}",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html#small-multiples-or-combined-plots-core",
+    "href": "materials/multi-panel-and-export.html#small-multiples-or-combined-plots-core",
+    "title": "9  Multi-panel figures and export",
+    "section": "9.2 Small multiples or combined plots? Core",
+    "text": "9.2 Small multiples or combined plots? Core\nThere are two kinds of multi-panel figure:\n\nSmall multiples: the same plot repeated for different subsets of the data, with shared axes. Use facet_wrap() or facet_grid(). You have met these in earlier chapters.\nCombined plots: different plots that together tell one story, such as a distribution, a comparison and a relationship. Use patchwork in R, or the composition operators in plotnine.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html#combining-plots-core",
+    "href": "materials/multi-panel-and-export.html#combining-plots-core",
+    "title": "9  Multi-panel figures and export",
+    "section": "9.3 Combining plots Core",
+    "text": "9.3 Combining plots Core\nMake each plot separately and store it in an object. Then combine them: | puts plots side by side and / stacks them.\n\nRPython\n\n\n\np_hist &lt;- ggplot(penguins, aes(x = flipper_length_mm)) +\n  geom_histogram(binwidth = 3, fill = \"grey50\", colour = \"white\") +\n  labs(x = \"Flipper length (mm)\", y = \"Count\")\n\np_box &lt;- ggplot(penguins, aes(x = species, y = body_mass_g)) +\n  geom_boxplot() +\n  labs(x = NULL, y = \"Body mass (g)\")\n\np_scatter &lt;- ggplot(penguins, aes(x = bill_length_mm, y = bill_depth_mm, colour = species)) +\n  geom_point(alpha = 0.8) +\n  scale_colour_manual(values = species_cols) +\n  labs(x = \"Bill length (mm)\", y = \"Bill depth (mm)\", colour = NULL)\n\n(p_hist | p_box) / p_scatter +\n  plot_annotation(tag_levels = \"A\")\n\n\n\n\n\n\n\n\nplot_annotation(tag_levels = \"A\") adds the panel letters automatically.\n\n\n\np_hist = (ggplot(penguins, aes(x=\"flipper_length_mm\"))\n          + geom_histogram(binwidth=3, fill=\"#7F7F7F\", color=\"white\")\n          + labs(x=\"Flipper length (mm)\", y=\"Count\", tag=\"A\"))\n\np_box = (ggplot(penguins, aes(x=\"species\", y=\"body_mass_g\"))\n         + geom_boxplot()\n         + labs(x=\"\", y=\"Body mass (g)\", tag=\"B\"))\n\np_scatter = (ggplot(penguins, aes(x=\"bill_length_mm\", y=\"bill_depth_mm\", color=\"species\"))\n             + geom_point(alpha=0.8)\n             + scale_color_manual(values=species_cols)\n             + labs(x=\"Bill length (mm)\", y=\"Bill depth (mm)\", color=\"\", tag=\"C\"))\n\np = (p_hist | p_box) / p_scatter\np.show()\n\n\nIn plotnine, panel letters are added to each plot with labs(tag=...).\n\n\n\n\n\n\n\n\n\nImportantDesign principle: one figure, one story\n\n\n\nA multi-panel figure should still have a single message, with each panel contributing to it. If the panels tell unrelated stories, they are probably separate figures.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html#saving-at-the-final-size-core",
+    "href": "materials/multi-panel-and-export.html#saving-at-the-final-size-core",
+    "title": "9  Multi-panel figures and export",
+    "section": "9.4 Saving at the final size Core",
+    "text": "9.4 Saving at the final size Core\nThe most common reason for unreadable figures in papers is that they were made at one size and printed at another. Text, points and lines are drawn at a fixed physical size, so shrinking the image shrinks them too.\nDecide the final width first, then save at exactly that size:\n\n\n\nWhere it goes\nTypical width\n\n\n\n\nSingle journal column\n8 to 9 cm\n\n\nFull page width\n17 to 18 cm\n\n\nSlide (16:9)\nabout 25 cm wide, 13 cm tall\n\n\nA0 poster panel\ndepends on layout; check at 100% zoom\n\n\n\n\nRPython\n\n\n\np &lt;- ggplot(penguins, aes(x = species, y = body_mass_g)) +\n  geom_boxplot() +\n  labs(x = NULL, y = \"Body mass (g)\") +\n  theme_minimal(base_size = 9)\n\nggsave(\"figures/body_mass.pdf\", p, width = 8.5, height = 6, units = \"cm\")\nggsave(\"figures/body_mass.png\", p, width = 8.5, height = 6, units = \"cm\", dpi = 600)\n\nFor a combined patchwork figure, save the combined object in exactly the same way.\n\n\n\np = (ggplot(penguins, aes(x=\"species\", y=\"body_mass_g\"))\n     + geom_boxplot()\n     + labs(x=\"\", y=\"Body mass (g)\")\n     + theme_minimal(base_size=9))\n\np.save(\"figures/body_mass.pdf\", width=8.5, height=6, units=\"cm\")\np.save(\"figures/body_mass.png\", width=8.5, height=6, units=\"cm\", dpi=600)\n\nCombined plots made with | and / have the same save() method.\n\n\n\nAt a journal column width, a base font size of 8 to 10 points usually matches the text of the paper. For slides, use 16 or more.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html#which-file-format-core",
+    "href": "materials/multi-panel-and-export.html#which-file-format-core",
+    "title": "9  Multi-panel figures and export",
+    "section": "9.5 Which file format? Core",
+    "text": "9.5 Which file format? Core\n\n\n\n\n\n\n\n\nFormat\nType\nUse for\n\n\n\n\nPDF or SVG\nVector: shapes and text, sharp at any size\nPapers, posters, theses; editing in Illustrator or Inkscape\n\n\nPNG\nRaster: pixels\nSlides, web pages, documents; use 300 dpi or more for print\n\n\nTIFF\nRaster\nOnly when a journal requires it\n\n\nJPEG\nRaster, lossy\nPhotographs, not plots: it blurs lines and text\n\n\n\nWhen in doubt, save a PDF for print and a PNG for screens.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html#reproducible-figures-core",
+    "href": "materials/multi-panel-and-export.html#reproducible-figures-core",
+    "title": "9  Multi-panel figures and export",
+    "section": "9.6 Reproducible figures Core",
+    "text": "9.6 Reproducible figures Core\n\nScript every figure, including panel letters, labels and annotations. Edits made by hand in other software have to be redone every time the data changes.\nDefine colours and themes once, at the top of your script or in a shared file, so every figure in a paper or thesis is consistent.\nSave with explicit sizes, never by copying from the screen.\nKeep the script with the data it uses, ideally in a version-controlled project.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html#exercises",
+    "href": "materials/multi-panel-and-export.html#exercises",
+    "title": "9  Multi-panel figures and export",
+    "section": "9.7 Exercises",
+    "text": "9.7 Exercises\n\n\n\n\n\n\nExerciseA three-panel figure\n\n\n\n\n\n\n\nLevel: \nUsing the Gapminder 2010 data, make a figure with three panels labelled A to C: a histogram of life expectancy, a sorted bar chart of mean life expectancy by region, and a scatter plot of income against life expectancy. Save it at full page width (17 cm) as a PDF.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nRPython\n\n\n\ngapminder &lt;- read_csv(\"data/gapminder_2010.csv\")\n\na &lt;- ggplot(gapminder, aes(x = life_expectancy)) +\n  geom_histogram(binwidth = 2.5, fill = \"grey50\", colour = \"white\") +\n  labs(x = \"Life expectancy (years)\", y = \"Countries\")\n\nb &lt;- gapminder |&gt;\n  group_by(region) |&gt;\n  summarise(le = mean(life_expectancy)) |&gt;\n  ggplot(aes(x = le, y = fct_reorder(region, le))) +\n  geom_col(fill = \"grey50\") +\n  labs(x = \"Mean life expectancy\", y = NULL)\n\nc &lt;- ggplot(gapminder, aes(x = income_per_person, y = life_expectancy)) +\n  geom_point(alpha = 0.5) +\n  scale_x_log10(labels = scales::label_dollar(accuracy = 1)) +\n  labs(x = \"Income per person (log scale)\", y = \"Life expectancy (years)\")\n\nfig &lt;- (a | b) / c + plot_annotation(tag_levels = \"A\")\nfig\n\n\n\n\n\n\n\n\n\nggsave(\"figures/gapminder_overview.pdf\", fig, width = 17, height = 13, units = \"cm\")\n\n\n\n\ngapminder = pd.read_csv(\"data/gapminder_2010.csv\")\n\na = (ggplot(gapminder, aes(x=\"life_expectancy\"))\n     + geom_histogram(binwidth=2.5, fill=\"#7F7F7F\", color=\"white\")\n     + labs(x=\"Life expectancy (years)\", y=\"Countries\", tag=\"A\"))\n\nregion_le = gapminder.groupby(\"region\", as_index=False)[\"life_expectancy\"].mean()\norder = region_le.sort_values(\"life_expectancy\")[\"region\"]\nregion_le[\"region\"] = pd.Categorical(region_le[\"region\"], categories=order)\n\nb = (ggplot(region_le, aes(x=\"region\", y=\"life_expectancy\"))\n     + geom_col(fill=\"#7F7F7F\")\n     + coord_flip()\n     + labs(x=\"\", y=\"Mean life expectancy\", tag=\"B\"))\n\nc = (ggplot(gapminder, aes(x=\"income_per_person\", y=\"life_expectancy\"))\n     + geom_point(alpha=0.5)\n     + scale_x_log10(labels=lambda breaks: [f\"${b:,.0f}\" for b in breaks])\n     + labs(x=\"Income per person (log scale)\", y=\"Life expectancy (years)\", tag=\"C\"))\n\np = (a | b) / c\np.show()\n\n\n\np.save(\"figures/gapminder_overview.pdf\", width=17, height=13, units=\"cm\")\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nExerciseCheck at final size Extension\n\n\n\n\n\n\n\nLevel: \nOpen the PDF you saved and view it at 100% zoom, or print it. Is every label readable? If not, increase base_size in your theme, rather than making the figure bigger.\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\nViewing at 100% is the only reliable check. If the text is too small, increase the base font size of the theme (for example theme_minimal(base_size = 10)) and save again at the same width.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/multi-panel-and-export.html#summary",
+    "href": "materials/multi-panel-and-export.html#summary",
+    "title": "9  Multi-panel figures and export",
+    "section": "9.8 Summary",
+    "text": "9.8 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nUse facets for small multiples, and patchwork or plotnine composition for combined plots.\nAdd panel letters in code, not by hand.\nDecide the final size first, and save at exactly that size.\nUse vector formats (PDF, SVG) for print and PNG for screens.\nScript everything, so figures can be remade when the data changes.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Multi-panel figures and export</span>"
+    ]
+  },
+  {
+    "objectID": "materials/makeover-challenge.html",
+    "href": "materials/makeover-challenge.html",
+    "title": "10  The makeover challenge",
+    "section": "",
+    "text": "10.1 The challenge\nTake one figure and make it better. You can use your own figure, a figure from the critique gallery, or one of the briefs below. By the end you should have a before and an after, and be able to explain every change.\nPlan for about 45 minutes, or longer if you are working on your own data.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>The makeover challenge</span>"
+    ]
+  },
+  {
+    "objectID": "materials/makeover-challenge.html#step-by-step",
+    "href": "materials/makeover-challenge.html#step-by-step",
+    "title": "10  The makeover challenge",
+    "section": "10.2 Step by step",
+    "text": "10.2 Step by step\n\n1. Headline→ 2. Sketch→ 3. Build→ 4. Test→ 5. Refine→ 6. Export\n\n\nWrite the headline. One sentence: what should the reader take away? Write it before any code.\nSketch two versions on paper. Which better supports the headline?\nBuild the best sketch. A good order of work is: chart type, then sorting, then grey and highlight, then labels, then the theme.\nTest with someone else. Show it for five seconds, hide it, and ask what they remember. Then go through the five questions together.\nRefine based on what they said.\nExport at the final size, and check it at 100% zoom.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>The makeover challenge</span>"
+    ]
+  },
+  {
+    "objectID": "materials/makeover-challenge.html#worked-example",
+    "href": "materials/makeover-challenge.html#worked-example",
+    "title": "10  The makeover challenge",
+    "section": "10.3 Worked example",
+    "text": "10.3 Worked example\nHere is the makeover sequence from the course, one step at a time. The code for the final version is in Labels, titles and annotation.\nHeadline: Sub-Saharan Africa trails every other region by over 10 years.\n\nBeforeStep 1Step 2After\n\n\n\n\n\nDefault settings: variable names as labels, alphabetical order, colours and a legend that repeat the axis.\n\n\n\n\n\n\n\nSort by value and flip to horizontal bars, so names have room and the ranking is visible.\n\n\n\n\n\n\n\nRemove the legend, make everything grey, and highlight the bar the message is about.\n\n\n\n\n\n\n\nWrite the headline as the title, add a subtitle and source, label the values directly and remove the axis they replace.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>The makeover challenge</span>"
+    ]
+  },
+  {
+    "objectID": "materials/makeover-challenge.html#briefs",
+    "href": "materials/makeover-challenge.html#briefs",
+    "title": "10  The makeover challenge",
+    "section": "10.4 Briefs",
+    "text": "10.4 Briefs\nIf you do not have your own figure, choose one of these.\n\n\n\n\n\n\nExerciseBrief 1: income and health\n\n\n\n\n\n\n\nLevel: \nData: gapminder_2010.csv\nAudience: a general audience reading a news article.\nTask: show that the relationship between income and life expectancy flattens out among richer countries. Highlight one region of your choice.\n\n\n\n\n\n\n\n\n\n\n\nExerciseBrief 2: three species\n\n\n\n\n\n\n\nLevel: \nData: penguins.csv\nAudience: a conference talk to ecologists. The slide will be on screen for about 30 seconds.\nTask: show how body mass differs between species and between sexes. Show the data, not just the means.\n\n\n\n\n\n\n\n\n\n\n\nExerciseBrief 3: fifty years of change\n\n\n\n\n\n\n\nLevel: \nData: gapminder_1960_2010.csv\nAudience: readers of a journal article.\nTask: show how child mortality changed between 1960 and 2010 in each region, and draw attention to one country whose story is different from its region’s. Use small multiples, direct labels and at least one annotation. Export as a PDF at full page width.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>The makeover challenge</span>"
+    ]
+  },
+  {
+    "objectID": "materials/makeover-challenge.html#giving-and-receiving-feedback",
+    "href": "materials/makeover-challenge.html#giving-and-receiving-feedback",
+    "title": "10  The makeover challenge",
+    "section": "10.5 Giving and receiving feedback",
+    "text": "10.5 Giving and receiving feedback\nWhen you test your figure with someone:\n\nReviewer: start by saying what you took away, before any suggestions. Be specific: “my eye went to the legend first” is more useful than “it’s a bit busy”. Offer options rather than instructions.\nOwner: listen and take notes. Resist the urge to explain. If the figure needs explaining, it needs changing.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>The makeover challenge</span>"
+    ]
+  },
+  {
+    "objectID": "materials/makeover-challenge.html#reflect",
+    "href": "materials/makeover-challenge.html#reflect",
+    "title": "10  The makeover challenge",
+    "section": "10.6 Reflect",
+    "text": "10.6 Reflect\nWhen you have finished, write two or three sentences for yourself:\n\nWhat was the single change that helped most?\nWhat will you do differently next time you make a figure?",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>The makeover challenge</span>"
+    ]
+  },
+  {
+    "objectID": "materials/makeover-challenge.html#summary",
+    "href": "materials/makeover-challenge.html#summary",
+    "title": "10  The makeover challenge",
+    "section": "10.7 Summary",
+    "text": "10.7 Summary\n\n\n\n\n\n\nTipKey points\n\n\n\n\nStart with the headline, then sketch, build, test and refine.\nWork in a sensible order: chart type, sorting, colour, labels, theme.\nTest with a fresh pair of eyes and the five questions.\nExport at the final size and check at 100% zoom.",
+    "crumbs": [
+      "**Finish your figures**",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>The makeover challenge</span>"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html",
+    "href": "reference/checklist.html",
+    "title": "Figure checklist",
+    "section": "",
+    "text": "Five questions\nUse this page to check your own figures and to give feedback to others. Work from the top: there is no point adjusting colours if the message is unclear.",
+    "crumbs": [
+      "Reference",
+      "Figure checklist"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html#five-questions",
+    "href": "reference/checklist.html#five-questions",
+    "title": "Figure checklist",
+    "section": "",
+    "text": "Message. What should someone take away in five seconds?\nAudience. Who is it for, and what do they already know?\nChart. Does the chart type fit the question?\nAttention. Where does the eye go first? Is that where the message is?\nIntegrity. Is it honest, readable at its final size, and accessible?\n\n\n\n\n\n\n\n\nImportantThe five-second test\n\n\n\nShow the figure to someone for five seconds, then hide it. Ask what they remember. If it is not your headline, the figure needs work.",
+    "crumbs": [
+      "Reference",
+      "Figure checklist"
+    ]
+  },
+  {
+    "objectID": "reference/checklist.html#detailed-checklist",
+    "href": "reference/checklist.html#detailed-checklist",
+    "title": "Figure checklist",
+    "section": "Detailed checklist",
+    "text": "Detailed checklist\n\nMessage\n\nI can write the message as one sentence.\nThe title (or the first sentence of the legend) states that message.\nEverything on the figure supports the message; anything that does not has been removed or moved to a supplement.\n\n\n\nAudience\n\nThe level of detail suits the audience: full detail for a paper, one point for a talk, plain language for the public.\nJargon and abbreviations are explained or removed.\nA figure from a paper has been remade for a talk, not copied.\n\n\n\nChart\n\nThe chart type matches the question: distribution, comparison, relationship, change or part to whole.\nThe most important comparison uses position or length, not angle, area or colour.\nContinuous data is shown as points or distributions, not only as bars of means.\n\n\n\nAttention\n\nCategories are sorted by value, or by their natural order.\nColour is used for a reason; supporting data is grey.\nLabels are placed directly on the data where possible, instead of in a legend.\nGrid lines, borders and backgrounds are light or removed.\n\n\n\nIntegrity\n\nBars start at zero. Zoomed axes use points or lines and are clearly labelled.\nLog scales are labelled as log scales.\nThere are no dual y axes.\nThe palette suits the data: sequential, diverging or qualitative, and not a rainbow.\nThe colours work for colour vision deficiency, and colour is never the only cue.\nText is readable at the final size (check at 100% zoom).\nAxis labels use plain words and units.\nThe source of the data is given.\nThe figure has alt text when it is published online. A good pattern is: chart type, what is plotted, then the message.\nThe figure is made by a script and can be remade if the data changes.",
+    "crumbs": [
+      "Reference",
+      "Figure checklist"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html",
+    "href": "reference/recipes.html",
+    "title": "Recipes",
+    "section": "",
+    "text": "Sort bars by value\nShort, copyable code for the changes you will make most often. Each recipe assumes you already have a plot stored as p, or a data frame df with a categorical column group and a numeric column value. Replace the names with your own.\nIn Python, these recipes assume import pandas as pd and from plotnine import *.\nTurn alphabetical order into a ranking.",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#sort-bars-by-value",
+    "href": "reference/recipes.html#sort-bars-by-value",
+    "title": "Recipes",
+    "section": "",
+    "text": "RPython\n\n\nggplot(df, aes(x = value, y = fct_reorder(group, value))) +\n  geom_col()\n\n\norder = df.sort_values(\"value\")[\"group\"]\ndf[\"group\"] = pd.Categorical(df[\"group\"], categories=order)\n\n(ggplot(df, aes(x=\"group\", y=\"value\"))\n + geom_col()\n + coord_flip())",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#grey-everything-highlight-one-group",
+    "href": "reference/recipes.html#grey-everything-highlight-one-group",
+    "title": "Recipes",
+    "section": "Grey everything, highlight one group",
+    "text": "Grey everything, highlight one group\nCreate a true or false column for the group your message is about.\n\nRPython\n\n\ndf |&gt;\n  mutate(focus = group == \"Mine\") |&gt;\n  ggplot(aes(x = value, y = fct_reorder(group, value), fill = focus)) +\n  geom_col() +\n  scale_fill_manual(values = c(\"grey75\", \"#D6083B\"), guide = \"none\")\n\n\ndf[\"focus\"] = df[\"group\"] == \"Mine\"\n\n(ggplot(df, aes(x=\"group\", y=\"value\", fill=\"focus\"))\n + geom_col()\n + coord_flip()\n + scale_fill_manual(values=[\"#BFBFBF\", \"#D6083B\"], guide=None))",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#headline-subtitle-caption-and-axis-labels",
+    "href": "reference/recipes.html#headline-subtitle-caption-and-axis-labels",
+    "title": "Recipes",
+    "section": "Headline, subtitle, caption and axis labels",
+    "text": "Headline, subtitle, caption and axis labels\n\nRPython\n\n\np + labs(title = \"What the reader should notice\",\n         subtitle = \"What is measured, where and when\",\n         caption = \"Source: ...\",\n         x = \"Readable label (units)\", y = NULL)\n\n\np + labs(title=\"What the reader should notice\",\n         subtitle=\"What is measured, where and when\",\n         caption=\"Source: ...\",\n         x=\"Readable label (units)\", y=\"\")",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#label-line-ends-instead-of-a-legend",
+    "href": "reference/recipes.html#label-line-ends-instead-of-a-legend",
+    "title": "Recipes",
+    "section": "Label line ends instead of a legend",
+    "text": "Label line ends instead of a legend\nMake a table of the last point of each line, and draw the labels there.\n\nRPython\n\n\nends &lt;- df |&gt; filter(year == max(year))\n\nggplot(df, aes(x = year, y = value, colour = group)) +\n  geom_line() +\n  geom_text(data = ends, aes(label = group), hjust = 0, nudge_x = 1) +\n  scale_x_continuous(expand = expansion(mult = c(0.02, 0.25))) +\n  theme(legend.position = \"none\")\n\n\nends = df[df[\"year\"] == df[\"year\"].max()]\n\n(ggplot(df, aes(x=\"year\", y=\"value\", color=\"group\"))\n + geom_line()\n + geom_text(ends, aes(label=\"group\"), ha=\"left\", nudge_x=1)\n + theme(legend_position=\"none\"))",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#remove-the-legend",
+    "href": "reference/recipes.html#remove-the-legend",
+    "title": "Recipes",
+    "section": "Remove the legend",
+    "text": "Remove the legend\n\nRPython\n\n\np + theme(legend.position = \"none\")\n\n\np + theme(legend_position=\"none\")",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#colour-blind-safe-colours",
+    "href": "reference/recipes.html#colour-blind-safe-colours",
+    "title": "Recipes",
+    "section": "Colour-blind safe colours",
+    "text": "Colour-blind safe colours\nThe Okabe and Ito palette. Use a named vector or dictionary to fix colours to groups.\n\nRPython\n\n\ncols &lt;- c(A = \"#E69F00\", B = \"#56B4E9\", C = \"#009E73\", D = \"#0072B2\")\np + scale_colour_manual(values = cols)\n\n\ncols = {\"A\": \"#E69F00\", \"B\": \"#56B4E9\", \"C\": \"#009E73\", \"D\": \"#0072B2\"}\np + scale_color_manual(values=cols)",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#viridis-for-continuous-colour",
+    "href": "reference/recipes.html#viridis-for-continuous-colour",
+    "title": "Recipes",
+    "section": "Viridis for continuous colour",
+    "text": "Viridis for continuous colour\n\nRPython\n\n\np + scale_colour_viridis_c()     # or scale_fill_viridis_c()\n\n\np + scale_color_cmap(\"viridis\")  # or scale_fill_cmap(\"viridis\")",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#diverging-colours-around-zero",
+    "href": "reference/recipes.html#diverging-colours-around-zero",
+    "title": "Recipes",
+    "section": "Diverging colours around zero",
+    "text": "Diverging colours around zero\n\nRPython\n\n\np + scale_fill_gradient2(low = \"#0072B2\", mid = \"white\", high = \"#D55E00\",\n                         midpoint = 0)\n\n\np + scale_fill_gradient2(low=\"#0072B2\", mid=\"white\", high=\"#D55E00\",\n                         midpoint=0)",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#readable-tick-labels",
+    "href": "reference/recipes.html#readable-tick-labels",
+    "title": "Recipes",
+    "section": "Readable tick labels",
+    "text": "Readable tick labels\n\nRPython\n\n\np + scale_y_continuous(labels = scales::label_percent())\np + scale_x_continuous(labels = scales::label_comma())\np + scale_x_log10(labels = scales::label_dollar(accuracy = 1))\n\n\np + scale_y_continuous(labels=lambda b: [f\"{v:.0%}\" for v in b])\np + scale_x_continuous(labels=lambda b: [f\"{v:,.0f}\" for v in b])\np + scale_x_log10(labels=lambda b: [f\"${v:,.0f}\" for v in b])",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#zoom-without-removing-data",
+    "href": "reference/recipes.html#zoom-without-removing-data",
+    "title": "Recipes",
+    "section": "Zoom without removing data",
+    "text": "Zoom without removing data\n\nRPython\n\n\np + coord_cartesian(ylim = c(40, 90))\n\n\np + coord_cartesian(ylim=(40, 90))",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#small-multiples-with-context",
+    "href": "reference/recipes.html#small-multiples-with-context",
+    "title": "Recipes",
+    "section": "Small multiples with context",
+    "text": "Small multiples with context\nDraw all the data in grey behind every panel, then each group on top.\n\nRPython\n\n\nggplot(df, aes(x = x, y = y)) +\n  geom_point(data = select(df, -group), colour = \"grey85\") +\n  geom_point(colour = \"#0072CF\") +\n  facet_wrap(~ group)\n\n\nbackground = df.drop(columns=\"group\")\n\n(ggplot(df, aes(x=\"x\", y=\"y\"))\n + geom_point(data=background, color=\"#D9D9D9\")\n + geom_point(color=\"#0072CF\")\n + facet_wrap(\"group\"))",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#clean-theme-with-larger-text",
+    "href": "reference/recipes.html#clean-theme-with-larger-text",
+    "title": "Recipes",
+    "section": "Clean theme with larger text",
+    "text": "Clean theme with larger text\n\nRPython\n\n\np + theme_minimal(base_size = 14) +\n  theme(panel.grid.minor = element_blank())\n\n\np + theme_minimal(base_size=14) + theme(panel_grid_minor=element_blank())",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#combine-plots-with-panel-letters",
+    "href": "reference/recipes.html#combine-plots-with-panel-letters",
+    "title": "Recipes",
+    "section": "Combine plots with panel letters",
+    "text": "Combine plots with panel letters\n\nRPython\n\n\nlibrary(patchwork)\n(p1 | p2) / p3 + plot_annotation(tag_levels = \"A\")\n\n\np1 = p1 + labs(tag=\"A\")\np2 = p2 + labs(tag=\"B\")\np3 = p3 + labs(tag=\"C\")\n(p1 | p2) / p3",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/recipes.html#save-at-the-final-size",
+    "href": "reference/recipes.html#save-at-the-final-size",
+    "title": "Recipes",
+    "section": "Save at the final size",
+    "text": "Save at the final size\n8.5 cm is about one journal column; 17 cm is a full page width.\n\nRPython\n\n\nggsave(\"figures/figure1.pdf\", p, width = 8.5, height = 6, units = \"cm\")\nggsave(\"figures/figure1.png\", p, width = 8.5, height = 6, units = \"cm\", dpi = 600)\n\n\np.save(\"figures/figure1.pdf\", width=8.5, height=6, units=\"cm\")\np.save(\"figures/figure1.png\", width=8.5, height=6, units=\"cm\", dpi=600)",
+    "crumbs": [
+      "Reference",
+      "Recipes"
+    ]
+  },
+  {
+    "objectID": "reference/gallery.html",
+    "href": "reference/gallery.html",
+    "title": "Critique gallery",
+    "section": "",
+    "text": "Figure A: Income and child mortality in Brazil\nEvery figure on this page was made with default settings and a few poor choices. Use them to practise the five questions, or choose one for the makeover challenge. All of them use the course data, so you can remake any of them.\nFor each figure, try to answer before opening the notes:\nData: gapminder_1960_2010.csv",
+    "crumbs": [
+      "Reference",
+      "Critique gallery"
+    ]
+  },
+  {
+    "objectID": "reference/gallery.html#figure-a-income-and-child-mortality-in-brazil",
+    "href": "reference/gallery.html#figure-a-income-and-child-mortality-in-brazil",
+    "title": "Critique gallery",
+    "section": "",
+    "text": "AnswerAnswer\n\n\n\n\n\n\n\n\nTwo unrelated y axes: the point where the lines cross means nothing, because it depends on how each scale was chosen.\nRaw variable names as axis labels, and no title or message.\nBetter: two aligned panels sharing the time axis. See Honest scales and axes.",
+    "crumbs": [
+      "Reference",
+      "Critique gallery"
+    ]
+  },
+  {
+    "objectID": "reference/gallery.html#figure-b-countries-by-religion-and-income-group",
+    "href": "reference/gallery.html#figure-b-countries-by-religion-and-income-group",
+    "title": "Critique gallery",
+    "section": "Figure B: Countries by religion and income group",
+    "text": "Figure B: Countries by religion and income group\n\nData: gapminder_2010.csv\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nA pie with twelve slices, many of similar size, which we cannot compare by angle.\nThe legend combines two variables, so the colours cannot be decoded.\nBetter: a stacked or grouped bar chart, or small multiples by religion. See Ranking and ordering.",
+    "crumbs": [
+      "Reference",
+      "Critique gallery"
+    ]
+  },
+  {
+    "objectID": "reference/gallery.html#figure-c-correlations-between-gapminder-variables",
+    "href": "reference/gallery.html#figure-c-correlations-between-gapminder-variables",
+    "title": "Critique gallery",
+    "section": "Figure C: Correlations between Gapminder variables",
+    "text": "Figure C: Correlations between Gapminder variables\n\nData: gapminder_2010.csv\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nA rainbow palette for a correlation, which needs a diverging palette centred on zero.\nVariables in no meaningful order, with rotated raw labels.\nBetter: a diverging palette with limits of -1 and 1, values written in the tiles, and readable labels. See Colour with purpose.",
+    "crumbs": [
+      "Reference",
+      "Critique gallery"
+    ]
+  },
+  {
+    "objectID": "reference/gallery.html#figure-d-life-expectancy-in-the-americas-and-europe",
+    "href": "reference/gallery.html#figure-d-life-expectancy-in-the-americas-and-europe",
+    "title": "Critique gallery",
+    "section": "Figure D: Life expectancy in the Americas and Europe",
+    "text": "Figure D: Life expectancy in the Americas and Europe\n\nData: gapminder_1960_2010.csv\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nA spaghetti plot with a legend of over 80 countries: impossible to follow any line.\nBetter: highlight a few countries in context, or use small multiples. See Change over time.",
+    "crumbs": [
+      "Reference",
+      "Critique gallery"
+    ]
+  },
+  {
+    "objectID": "reference/gallery.html#figure-e-beak-depth-in-four-groups-of-finches",
+    "href": "reference/gallery.html#figure-e-beak-depth-in-four-groups-of-finches",
+    "title": "Critique gallery",
+    "section": "Figure E: Beak depth in four groups of finches",
+    "text": "Figure E: Beak depth in four groups of finches\n\nData: finches.csv\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nBars of means with standard errors hide the data.\nThe y axis is truncated, so the bars exaggerate small differences.\nThe colour repeats the x axis, and one group appears to be missing because its bar falls outside the truncated axis.\nBetter: show every point with the mean. See Distributions.",
+    "crumbs": [
+      "Reference",
+      "Critique gallery"
+    ]
+  },
+  {
+    "objectID": "reference/gallery.html#figure-f-income-and-life-expectancy",
+    "href": "reference/gallery.html#figure-f-income-and-life-expectancy",
+    "title": "Critique gallery",
+    "section": "Figure F: Income and life expectancy",
+    "text": "Figure F: Income and life expectancy\n\nData: gapminder_2010.csv\n\n\n\n\n\n\nAnswerAnswer\n\n\n\n\n\n\n\n\nFour channels at once: position, size, colour and shape, plus every country labelled.\nHeavy overplotting in the bottom left, because income is on a linear scale.\nBetter: a log scale, one highlighted group, and labels only for countries that matter to the message. See Relationships.",
+    "crumbs": [
+      "Reference",
+      "Critique gallery"
+    ]
+  },
+  {
+    "objectID": "references.html",
+    "href": "references.html",
+    "title": "References and further reading",
+    "section": "",
+    "text": "Where to go next",
+    "crumbs": [
+      "Reference",
+      "References and further reading"
+    ]
+  },
+  {
+    "objectID": "references.html#where-to-go-next",
+    "href": "references.html#where-to-go-next",
+    "title": "References and further reading",
+    "section": "",
+    "text": "Franconeri et al. (2021): a readable review of the research evidence on what works in visual communication.\nWilke (2019): a free online book with excellent side-by-side good and bad examples, written by a ggplot2 developer.\nHealy (2018): a free online book teaching ggplot2 with social science data.\nRougier et al. (2014): ten short, practical rules for better scientific figures.\nCrameri et al. (2020): why rainbow colour maps distort data and exclude readers, and what to use instead.\nWeissgerber et al. (2015): why bar charts of means hide the data, with practical alternatives.",
+    "crumbs": [
+      "Reference",
+      "References and further reading"
+    ]
+  },
+  {
+    "objectID": "references.html#all-references",
+    "href": "references.html#all-references",
+    "title": "References and further reading",
+    "section": "All references",
+    "text": "All references\n\n\nAnscombe, F. J. 1973. “Graphs in Statistical Analysis.”\nThe American Statistician 27 (1): 17–21. https://doi.org/10.1080/00031305.1973.10478966.\n\n\nCleveland, William S., and Robert McGill. 1984. “Graphical\nPerception: Theory, Experimentation, and Application to the Development\nof Graphical Methods.” Journal of the American Statistical\nAssociation 79 (387): 531–54. https://doi.org/10.1080/01621459.1984.10478080.\n\n\nCrameri, Fabio, Grace E. Shephard, and Philip J. Heron. 2020. “The\nMisuse of Colour in Science Communication.” Nature\nCommunications 11: 5444. https://doi.org/10.1038/s41467-020-19160-7.\n\n\nFranconeri, Steven L., Lace M. Padilla, Priti Shah, Jeffrey M. Zacks,\nand Jessica Hullman. 2021. “The Science of Visual Data\nCommunication: What Works.” Psychological Science in the\nPublic Interest 22 (3): 110–61. https://doi.org/10.1177/15291006211051956.\n\n\nGapminder Foundation. 2024. Gapminder Data. https://www.gapminder.org/data/.\n\n\nHealy, Kieran. 2018. Data Visualization: A Practical\nIntroduction. Princeton University Press. https://socviz.co/.\n\n\nHorst, Allison M., Alison P. Hill, and Kristen B. Gorman. 2020.\nPalmerpenguins: Palmer Archipelago (Antarctica) Penguin Data.\nhttps://doi.org/10.5281/zenodo.3960218.\n\n\nOkabe, Masataka, and Kei Ito. 2008. Color Universal Design\n(CUD): How to Make Figures and Presentations That Are\nFriendly to Colorblind People. https://jfly.uni-koeln.de/color/.\n\n\nRougier, Nicolas P., Michael Droettboom, and Philip E. Bourne. 2014.\n“Ten Simple Rules for Better Figures.” PLOS\nComputational Biology 10 (9): e1003833. https://doi.org/10.1371/journal.pcbi.1003833.\n\n\nWeissgerber, Tracey L., Natasa M. Milic, Stacey J. Winham, and Vesna D.\nGarovic. 2015. “Beyond Bar and Line Graphs: Time for a New Data\nPresentation Paradigm.” PLOS Biology 13 (4): e1002128.\nhttps://doi.org/10.1371/journal.pbio.1002128.\n\n\nWickham, Hadley. 2010. “A Layered Grammar of Graphics.”\nJournal of Computational and Graphical Statistics 19 (1): 3–28.\nhttps://doi.org/10.1198/jcgs.2009.07098.\n\n\nWilke, Claus O. 2019. Fundamentals of Data Visualization: A Primer\non Making Informative and Compelling Figures. O’Reilly Media. https://clauswilke.com/dataviz/.",
+    "crumbs": [
+      "Reference",
+      "References and further reading"
+    ]
+  }
+]

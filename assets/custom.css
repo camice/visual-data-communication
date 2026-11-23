@@ -1,0 +1,179 @@
+/* Figures with Purpose: additions to the cambiotraining course format.
+   Colours follow the University of Cambridge palette used in CRIT materials. */
+
+:root {
+  --fwp-dark: #003E72;
+  --fwp-blue: #0072CF;
+  --fwp-red: #D6083B;
+  --fwp-orange: #EA7125;
+  --fwp-green: #55A51C;
+  --fwp-purple: #8F2BBC;
+  --fwp-teal: #00B1C1;
+  --fwp-tint: #EEF4FB;
+}
+
+/* ---------- hero image at the top of a chapter ---------- */
+.hero {
+  margin: 1.2rem 0 1.8rem 0;
+}
+.hero img {
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+}
+.hero figcaption, .hero .figure-caption {
+  text-align: center;
+  color: #555;
+}
+
+/* ---------- before and after pairs ---------- */
+.before-after {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin: 1.2rem 0 1.6rem 0;
+  align-items: start;
+}
+.before-after > div {
+  background: #fff;
+  border: 1px solid #e3e3e3;
+  border-radius: 10px;
+  padding: 0.6rem 0.8rem 0.4rem 0.8rem;
+}
+.before-after img { width: 100%; }
+.before-after p { margin-bottom: 0.3rem; }
+.chip {
+  display: inline-block;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.1rem 0.6rem;
+  border-radius: 999px;
+  color: #fff;
+  margin-bottom: 0.4rem;
+}
+.chip.before { background: #888; }
+.chip.after { background: var(--fwp-green); }
+@media (max-width: 760px) {
+  .before-after { grid-template-columns: 1fr; }
+}
+
+/* ---------- core and extension labels ---------- */
+.badge-core, .badge-ext {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.05rem 0.55rem;
+  border-radius: 999px;
+  color: #fff;
+  vertical-align: middle;
+  margin-left: 0.3rem;
+}
+.badge-core { background: var(--fwp-blue); }
+.badge-ext { background: var(--fwp-purple); }
+
+/* ---------- course map cards on the home page ---------- */
+.course-map {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin: 1.2rem 0 2rem 0;
+}
+.course-map a.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+.map-card {
+  display: flex;
+  gap: 0.9rem;
+  align-items: center;
+  background: var(--fwp-tint);
+  border-radius: 12px;
+  padding: 0.9rem;
+  height: 100%;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+.map-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 62, 114, 0.15);
+}
+.map-card img {
+  width: 96px;
+  height: 74px;
+  object-fit: contain;
+  background: #fff;
+  border-radius: 8px;
+  padding: 4px;
+  flex-shrink: 0;
+}
+.map-card .map-title {
+  font-weight: 700;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.05rem;
+  color: var(--fwp-dark);
+}
+.map-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #333;
+}
+@media (max-width: 760px) {
+  .course-map { grid-template-columns: 1fr; }
+}
+
+/* ---------- the design process as a row of steps ---------- */
+.process {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  margin: 1rem 0 1.4rem 0;
+}
+.process span.step {
+  color: #fff;
+  font-weight: 700;
+  padding: 0.35rem 0.65rem;
+  border-radius: 8px;
+  font-size: 0.85rem;
+}
+.process span.arrow { color: var(--fwp-dark); font-weight: 700; }
+.step.understand { background: var(--fwp-blue); }
+.step.decide { background: var(--fwp-red); }
+.step.make { background: var(--fwp-orange); }
+.step.build { background: var(--fwp-green); }
+.step.test { background: var(--fwp-purple); }
+
+/* ---------- five questions ---------- */
+.five-q {
+  counter-reset: fq;
+  list-style: none;
+  padding-left: 0;
+}
+.five-q li {
+  counter-increment: fq;
+  position: relative;
+  padding: 0.55rem 0.8rem 0.55rem 3.2rem;
+  margin-bottom: 0.5rem;
+  background: var(--fwp-tint);
+  border-radius: 10px;
+}
+.five-q li::before {
+  content: counter(fq);
+  position: absolute;
+  left: 0.7rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1.9rem;
+  height: 1.9rem;
+  border-radius: 50%;
+  background: var(--fwp-dark);
+  color: #fff;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ---------- small tidy-ups ---------- */
+.cell-output-display img {
+  border-radius: 6px;
+}
+table.recipes td:first-child { font-weight: 600; }
